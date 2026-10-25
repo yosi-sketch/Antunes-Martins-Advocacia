@@ -28,63 +28,64 @@ const bodyFont = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0c0a09",
+  themeColor: "#0b0a09",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.isadoracaetano.adv.br"),
+  metadataBase: new URL("https://www.brunobarroso.adv.br"),
   title:
-    "Isadora Caetano — Escritório de Advocacia | Família, Sucessões e Regularização de Imóveis · Conselheiro Pena - MG",
+    "Bruno Barroso — Advocacia e Assessoria Jurídica | Previdenciário, Empresarial, Imobiliário e Cível · Turmalina - MG",
   description:
-    "Dra. Isadora Caetano — Escritório de Advocacia e Consultoria. Especialistas em Direito de Família (Divórcio, Guarda, Pensão), Sucessões (Inventários, Herança, Partilha) e Regularização de Imóveis (Usucapião, Escrituras, Contratos). Nota 4,9 ★ com mais de 166 avaliações no Google. Atendimento presencial em Conselheiro Pena - MG e digital para todo o Brasil e exterior.",
+    "Dr. Bruno Barroso — Advocacia e Assessoria Jurídica. +14 anos de tradição, ética e compromisso. Especialistas em Direito Previdenciário (Aposentadorias do INSS), Direito Imobiliário, Cível, Sucessões e Assessoria Jurídica Empresarial. Nota Máxima 5,0 ★ com mais de 55 avaliações no Google em Turmalina - MG. Atendimento presencial e digital para todo o Brasil.",
   keywords: [
-    "Isadora Caetano Advocacia",
-    "Dra. Isadora Caetano",
-    "Isadora Caetano Escritório de Advocacia",
-    "Advogado Conselheiro Pena MG",
-    "Advocacia Conselheiro Pena",
-    "Direito de Família Conselheiro Pena",
-    "Advogado Divórcio Conselheiro Pena",
-    "Inventário Conselheiro Pena",
-    "Partilha de Bens MG",
-    "Herança e Sucessões MG",
-    "Regularização de Imóveis Conselheiro Pena",
-    "Usucapião Judicial e Extrajudicial MG",
-    "Escritura de Imóveis Conselheiro Pena",
-    "Bernardo Haussmann Advogado",
-    "Advogado Leste de Minas Gerais",
+    "Bruno Barroso Advocacia",
+    "Dr. Bruno Barroso",
+    "Bruno Barroso Advogado",
+    "Advocacia e Assessoria Jurídica Bruno Barroso",
+    "Advogado Turmalina MG",
+    "Advocacia Turmalina",
+    "Advogado Previdenciário Turmalina",
+    "Aposentadoria INSS Turmalina",
+    "Benefícios Previdenciários Turmalina MG",
+    "Assessoria Jurídica Empresarial Turmalina",
+    "Direito Imobiliário Turmalina",
+    "Usucapião Turmalina MG",
+    "Inventário e Sucessões Turmalina",
+    "Advogado Vale do Jequitinhonha",
+    "Advogado Minas Gerais",
   ],
-  authors: [{ name: "Isadora Caetano — Escritório de Advocacia" }],
-  creator: "Isadora Caetano — Escritório de Advocacia",
-  publisher: "Isadora Caetano — Advocacia e Consultoria",
+  authors: [{ name: "Bruno Barroso — Advocacia e Assessoria Jurídica" }],
+  creator: "Bruno Barroso — Advocacia e Assessoria Jurídica",
+  publisher: "Bruno Barroso — Advocacia e Assessoria Jurídica",
   formatDetection: {
     telephone: true,
     address: true,
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-32x32.png", type: "image/png", sizes: "32x32" },
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=bruno3", sizes: "any" },
+      { url: "/icon-32x32.png?v=bruno3", type: "image/png", sizes: "32x32" },
+      { url: "/icon-16x16.png?v=bruno3", type: "image/png", sizes: "16x16" },
+      { url: "/icon.png?v=bruno3", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: "/icon-32x32.png",
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    shortcut: "/icon-32x32.png?v=bruno3",
+    apple: [{ url: "/apple-icon.png?v=bruno3", sizes: "180x180" }],
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://www.isadoracaetano.adv.br",
+    url: "https://www.brunobarroso.adv.br",
     title:
-      "Isadora Caetano — Escritório de Advocacia | Família, Sucessões e Imóveis · Conselheiro Pena - MG",
+      "Bruno Barroso — Advocacia e Assessoria Jurídica | Turmalina - MG",
     description:
-      "Segurança jurídica, ética e atendimento acolhedor. Especialistas em Direito de Família, Inventários, Sucessões e Regularização Imobiliária. Avaliação 4,9 ★ com mais de 166 avaliações reais no Google. Conselheiro Pena - MG e atendimento online.",
-    siteName: "Isadora Caetano — Escritório de Advocacia",
+      "Justiça com ética, clareza e compromisso. +14 anos de advocacia combativa e resolutiva. Nota 5,0 ★ com 55 avaliações reais no Google em Turmalina - MG.",
+    siteName: "Bruno Barroso — Advocacia e Assessoria Jurídica",
     images: [
       {
         url: "/logo.png",
-        width: 971,
-        height: 242,
-        alt: "Isadora Caetano Advocacia e Consultoria - Logotipo Oficial",
+        width: 956,
+        height: 520,
+        alt: "Bruno Barroso Advocacia e Assessoria Jurídica - Logotipo Oficial",
       },
     ],
   },
@@ -98,47 +99,48 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    name: "Isadora Caetano — Escritório de Advocacia",
-    alternateName: "Isadora Caetano Advocacia e Consultoria",
+    name: "Bruno Barroso — Advocacia e Assessoria Jurídica",
+    alternateName: "Bruno Barroso Advocacia",
     founder: [
       {
         "@type": "Person",
-        name: "Dra. Isadora Caetano",
-        jobTitle: "Advogada Fundadora · Especialista em Família, Sucessões e Imóveis",
-      },
-      {
-        "@type": "Person",
-        name: "Dr. Bernardo Haussmann",
-        jobTitle: "Advogado Associado",
+        name: "Dr. Bruno Barroso",
+        jobTitle: "Advogado Fundador · Especialista em Direito Previdenciário, Cível, Imobiliário e Empresarial",
       },
     ],
-    telephone: "+55-33-98763-4386",
-    url: "https://www.isadoracaetano.adv.br",
-    image: "https://www.isadoracaetano.adv.br/logo.png",
+    employee: [
+      {
+        "@type": "Person",
+        name: "Dra. Jennifer Karin",
+        jobTitle: "Advogada Associada",
+      },
+    ],
+    telephone: "+55-38-99265-0181",
+    url: "https://www.brunobarroso.adv.br",
+    image: "https://www.brunobarroso.adv.br/logo.png",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "R. Feliciano Ferraz, 272 - Lj 2 - Centro",
-      addressLocality: "Conselheiro Pena",
+      streetAddress: "Av. Lauro Machado, 390 - Centro",
+      addressLocality: "Turmalina",
       addressRegion: "MG",
-      postalCode: "35240-000",
+      postalCode: "39660-000",
       addressCountry: "BR",
     },
     priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "166",
+      ratingValue: "5.0",
+      reviewCount: "55",
     },
     areaServed: [
-      "Conselheiro Pena",
-      "Resplendor",
-      "Aimorés",
-      "Governador Valadares",
-      "Vale do Rio Doce",
-      "Leste de Minas",
+      "Turmalina",
+      "Minas Novas",
+      "Capelinha",
+      "Carbonita",
+      "Veredinha",
+      "Vale do Jequitinhonha",
       "Minas Gerais",
       "Brasil",
-      "Exterior (EUA e Europa)",
     ],
     openingHoursSpecification: [
       {
@@ -155,11 +157,9 @@ export default function RootLayout({
       },
     ],
     sameAs: [
-      "https://wa.me/5533987634386",
-      "https://wa.me/message/TGX7Q5QBI25JI1",
-      "https://www.instagram.com/isadoracaetano.adv/",
-      "https://www.instagram.com/caetanoisadora/",
-      "https://www.google.com/search?q=Isadora+Caetano+%E2%80%94+Escrit%C3%B3rio+de+Advocacia%0AConselheiro+Pena+%C2%B7+MG&sourceid=chrome&ie=UTF-8#",
+      "https://wa.me/5538992650181",
+      "https://www.instagram.com/brunobarrosoadvocacia/",
+      "https://www.google.com/search?q=Bruno+Barroso+%E2%80%94+Advocacia+e+Assessoria+Jur%C3%ADdica%0ATurmalina+%C2%B7+MG&sourceid=chrome&ie=UTF-8#",
     ],
   };
 
@@ -169,15 +169,17 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${playfairFont.variable} ${cinzelFont.variable} scroll-smooth`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        <link rel="icon" href="/favicon.ico?v=bruno3" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png?v=bruno3" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png?v=bruno3" />
+        <link rel="shortcut icon" href="/icon-32x32.png?v=bruno3" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png?v=bruno3" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen overflow-x-clip bg-[#0c0a09] font-sans text-[#ede5dc] antialiased selection:bg-[#ba7852] selection:text-white">
+      <body className="min-h-screen overflow-x-clip bg-[#0b0a09] font-sans text-[#ede5dc] antialiased selection:bg-[#d4a843] selection:text-[#0b0a09]">
         {children}
       </body>
     </html>

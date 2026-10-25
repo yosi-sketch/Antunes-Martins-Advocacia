@@ -1,36 +1,35 @@
-# ISADORA CAETANO — ESCRITÓRIO DE ADVOCACIA E CONSULTORIA
-## Advocacia de Excelência · Conselheiro Pena - MG · Atendimento Global
+# BRUNO BARROSO — ADVOCACIA E ASSESSORIA JURÍDICA
+## Advocacia de Excelência · Turmalina - MG · Atendimento Nacional
 
 ## Plataforma
-Landing page institucional de altíssimo padrão desenvolvida em Next.js 16 (App Router) e Tailwind CSS v4, projetada para transmitir sofisticação, autoridade jurídica inabalável, acolhimento humano e segurança patrimonial, com navegação fluida, modais interativos para detalhamento das especialidades em Direito de Família, Sucessões & Inventários, Regularização de Imóveis (Usucapião) e Advocacia Cível Estratégica (incluindo suporte exclusivo a clientes no exterior, como nos EUA), com integração direta com WhatsApp.
+Landing page institucional de altíssimo padrão desenvolvida em Next.js 16 (App Router) e Tailwind CSS v4, projetada para transmitir sofisticação, autoridade jurídica inabalável, acolhimento humano e segurança patrimonial, com navegação fluida, modais interativos para detalhamento das especialidades em Direito Previdenciário (Aposentadorias e INSS), Assessoria Jurídica Empresarial, Direito Imobiliário (Usucapião e Regularização de Imóveis) e Direito Cível, Família & Sucessões, com integração direta com WhatsApp.
 
 ## Público
-Famílias, herdeiros, proprietários e investidores que necessitam de resolução ágil e pacífica em divórcios, partilhas de bens, inventários judiciais e extrajudiciais, regularização de escrituras e registros imobiliários, além de brasileiros residentes no exterior (EUA e outros países) com demandas patrimoniais no Brasil, em Conselheiro Pena - MG, Resplendor, Aimorés, Governador Valadares, todo o Leste de Minas Gerais, Brasil e internacional.
+Trabalhadores urbanos e rurais em busca de concessão ou revisão de aposentadoria e benefícios no INSS, empresários e comerciantes que necessitam de assessoria jurídica contínua e blindagem contratual, proprietários de imóveis rurais e urbanos que buscam regularização fundiária e usucapião, e famílias que demandam soluções seguras em inventários, divórcios e questões cíveis em Turmalina - MG, Minas Novas, Capelinha, Carbonita, Vale do Jequitinhonha e em todo o Brasil.
 
 ## Objetivo
-Apresentar a advocacia de excelência liderada pela Dra. Isadora Caetano e pelo Dr. Bernardo Haussmann, destacando a nota máxima de **4,9 estrelas com mais de 166 avaliações reais no Google Meu Negócio**, a agilidade comprovada em destravar processos que estavam parados há anos em outros escritórios, o atendimento humanizado sem juridiquês e a viabilização de contato direto e imediato via WhatsApp: (33) 98763-4386.
+Apresentar a advocacia de excelência liderada pelo Dr. Bruno Barroso e corpo jurídico com a Dra. Jennifer Karin, destacando a nota máxima de **5,0 estrelas com 55 avaliações unânimes no Google Meu Negócio**, a tradição de mais de 14 anos na comarca de Turmalina, o histórico de causas ganhas e agilidade comprovada, o atendimento humanizado sem juridiquês e a viabilização de contato direto e imediato via WhatsApp: (38) 99265-0181.
 
 ## Identidade Visual & Cores (Extraída Diretamente do Novo Logo)
-- **Marca:** Isadora Caetano — Advocacia e Consultoria
-- **Estilo:** Metallic Warm Bronze & Warm Espresso Noir — Monograma entrelaçado "IC" 3D com curvatura fluida em ouro bronze/champagne e face marfim perolado; tipografia clássica lapidária romana "ISADORA CAETANO" e "ADVOCACIA E CONSULTORIA".
+- **Marca:** Bruno Barroso — Advocacia e Assessoria Jurídica
+- **Estilo:** Imperial Burnished Gold & Rich Obsidian Noir — Balança da Justiça com Monograma "B" tridimensional lapidado em ouro metálico nobre com reflexos especulares e tipografia serifada monumental "BRUNO BARROSO" e "ADVOCACIA".
 - **Paleta de Cores:**
-  - **Bronze Metálico & Rose Gold (Destaques, Bordas & Acentos):** `#BA7852`, `#DF9F77`, `#F3CCA8`, `#FBF5EE`, `#874828`, `#542813` (extraído diretamente do monograma e reflexos especulares do logo).
-  - **Warm Espresso Noir (Fundos & Superfícies de Autoridade):** `#0C0A09`, `#14100E`, `#1A1614`, `#241E1B` com bordas metálicas translúcidas `rgba(186, 120, 82, 0.25)`.
-  - **Cashmere & Marfim Suave (Superfícies de Leitura & Equilíbrio Editorial):** `#FAF7F2`, `#F3ECE3`, `#FFFFFF` com bordas `#E8DED3` e texto em grafite profundo `#14100E` / `#171311`.
-  - **Textos:** Branco puro `#FFFFFF`, Marfim bronze `#F3CCA8`, e `#EDE5DC` para leitura confortável e sem fadiga visual.
+  - **Ouro Imperial & Ouro Nobre (Destaques, Bordas & Acentos):** `#D4A843`, `#F5D77F`, `#FBEABB`, `#FDF9EE`, `#96681E`, `#5E3C09` (extraído diretamente do monograma e reflexos do logo).
+  - **Rich Obsidian Noir (Fundos & Superfícies de Autoridade):** `#0B0A09`, `#14110E`, `#1A1612`, `#241E17` com bordas metálicas translúcidas `rgba(212, 168, 67, 0.30)`.
+  - **Parchment Cream & Marfim Editorial (Superfícies de Leitura & Equilíbrio):** `#FAF7F2`, `#F4EFE6`, `#FFFFFF` com bordas `#E8DED3` e texto em grafite profundo `#14110E` / `#544941`.
+  - **Textos:** Branco puro `#FFFFFF`, Ouro suave `#FBEABB`, e `#EDE5DC` para leitura confortável e sem fadiga visual.
 - **Tipografia:**
   - Cinzel / Playfair Display para títulos nobres e cabeçalhos imponentes alinhados ao logotipo clássico
   - Plus Jakarta Sans para leitura confortável, moderna e limpa no corpo de texto
-- **Tom de voz:** Sofisticado, empático, seguro, transparente, ágil e resolutivo ("segurança jurídica e sensibilidade para defender sua família, seu patrimônio e seus direitos").
+- **Tom de voz:** Sofisticado, ético, seguro, transparente, ágil e resolutivo ("Justiça com ética, clareza e compromisso na defesa dos seus direitos e do seu patrimônio").
 
 ## Conteúdo e Mídia
-- Logotipo oficial "IC Isadora Caetano Advocacia e Consultoria" (`public/logo.png`, `public/logo-emblem.png`).
-- Foto de atuação da Dra. Isadora Caetano em seu escritório com laptop, café e caderno com monograma IC (`public/dra-isadora-caetano.jpg`, `public/hero.jpg`).
-- Foto da equipe caminhando em espaço arquitetônico moderno (`public/equipe-walking.jpg`, `public/about.jpg`).
-- Foto da equipe reunida no sofá em ambiente acolhedor (`public/equipe-sofa.jpg`, `public/team.jpg`).
-- Telefone / WhatsApp: (33) 98763-4386 (`5533987634386`).
-- E-mail: `contato@isadoracaetano.adv.br`.
-- Redes Sociais: Instagram `@isadoracaetano.adv` e `@caetanoisadora`.
-- Localização: R. Feliciano Ferraz, 272 - Lj 2 - Centro, Conselheiro Pena - MG, 35240-000, Brasil.
+- Logotipo oficial "Bruno Barroso Advocacia" (`public/logo.png`, `public/logo-emblem.png`, `public/logo-seal.png`).
+- Foto de atuação do Dr. Bruno Barroso em sua mesa de escritório (`public/dr-bruno-barroso.jpg`, `public/hero.jpg`).
+- Foto do Dr. Bruno Barroso na biblioteca jurídica (`public/dr-bruno-livraria.jpg`, `public/about.jpg`).
+- Telefone / WhatsApp: (38) 99265-0181 (`5538992650181`).
+- E-mail: `contato@brunobarroso.adv.br`.
+- Redes Sociais: Instagram `@brunobarrosoadvocacia`.
+- Localização: Av. Lauro Machado, 390 - Centro, Turmalina - MG, 39660-000, Brasil.
 - Horário de funcionamento: Segunda a Sexta a partir das 08:00.
-- Prova social: 4,9 estrelas com mais de 166 avaliações verificadas no Google Meu Negócio.
+- Prova social: 5,0 estrelas com 55 avaliações verificadas no Google Meu Negócio.
