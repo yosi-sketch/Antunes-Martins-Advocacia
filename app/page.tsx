@@ -487,7 +487,7 @@ export default function Home() {
                 width={480}
                 height={150}
                 priority
-                className="h-[46px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(223,177,53,0.30)] sm:h-[52px] lg:h-[58px] xl:h-[64px]"
+                className="h-[60px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(223,177,53,0.30)] sm:h-[68px] lg:h-[76px] xl:h-[84px]"
               />
             </a>
 
@@ -557,7 +557,7 @@ export default function Home() {
                       alt="Antunes & Martins Advocacia Especializada"
                       width={280}
                       height={90}
-                      className="h-10 w-auto object-contain"
+                      className="h-[52px] w-auto object-contain"
                     />
                   </div>
                   {[
