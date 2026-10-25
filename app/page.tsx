@@ -19,37 +19,37 @@ import {
   X,
   Sparkles,
   Briefcase,
-  Building2,
   FileText,
   BadgeCheck,
-  FileCheck2,
   Home as HomeIcon,
+  Gavel,
   CheckCircle2,
 } from "lucide-react";
 import GlowingButton from "./components/GlowingButton";
 
-const WHATSAPP_NUMBER = "5538992650181";
-const PHONE_DISPLAY = "(38) 99265-0181";
-const EMAIL_CONTACT = "contato@brunobarroso.adv.br";
-const INSTAGRAM_URL = "https://www.instagram.com/brunobarrosoadvocacia/";
-const INSTAGRAM_HANDLE = "@brunobarrosoadvocacia";
+const WHATSAPP_NUMBER = "5533991274893";
+const WHATSAPP_SECONDARY = "553399506493";
+const PHONE_DISPLAY = "(33) 99127-4893";
+const PHONE_SECONDARY_DISPLAY = "(33) 9950-6493";
+const EMAIL_CONTACT = "contato@antunesemartins.adv.br";
+const INSTAGRAM_URL = "https://www.instagram.com/antunesemartins.advocacia/";
+const INSTAGRAM_HANDLE = "@antunesemartins.advocacia";
 
-const ADDRESS_TEXT =
-  "Av. Lauro Machado, 390 - Centro, Turmalina - MG, 39660-000";
+const ADDRESS_TEXT = "R. Caxambú, 230 - Centro, Nanuque - MG, 39860-000";
 const GOOGLE_SEARCH_URL =
-  "https://www.google.com/search?q=Bruno+Barroso+%E2%80%94+Advocacia+e+Assessoria+Jur%C3%ADdica%0ATurmalina+%C2%B7+MG&sourceid=chrome&ie=UTF-8#";
+  "https://www.google.com/search?q=Antunes+%26+Martins+Advocacia+Especializada%0ANanuque+%C2%B7+MG&sourceid=chrome&ie=UTF-8#";
 
 const LOGO_SRC = "/logo.png";
 const LOGO_EMBLEM_SRC = "/logo-emblem.png";
-const FOTO_HERO_SRC = "/dr-bruno-barroso-2x.jpg";
-const FOTO_ABOUT_SRC = "/dr-bruno-livraria.jpg";
+const FOTO_HERO_SRC = "/hero.jpg";
+const FOTO_ABOUT_SRC = "/about.jpg";
 
 function getWhatsAppUrl(
   message?: string,
   number: string = WHATSAPP_NUMBER
 ) {
   const defaultText =
-    "Olá, Dr. Bruno Barroso! Gostaria de uma consultoria jurídica com o seu escritório.";
+    "Olá! Gostaria de uma consultoria jurídica com o escritório Antunes & Martins Advocacia Especializada.";
   return `https://wa.me/${number}?text=${encodeURIComponent(
     message || defaultText
   )}`;
@@ -160,90 +160,109 @@ interface PracticeArea {
 
 const practiceAreas: PracticeArea[] = [
   {
+    id: "direito-civel",
+    title: "Direito Cível & Resolução Estratégica",
+    category: "Cível · Contratos · Indenizações · Obrigações · Consumidor",
+    icon: Scale,
+    tag: "Ações Indenizatórias · Contratos · Cobranças · Danos Morais & Materiais",
+    summary:
+      "Atuação contenciosa e consultiva de excelência para proteger seus direitos civis, resolver litígios complexos e salvaguardar seu patrimônio com segurança jurídica.",
+    details:
+      "As relações civis demandam precisão técnica, firmeza e estratégia. O escritório Antunes & Martins Advocacia Especializada atua na elaboração e revisão de contratos, defesas cíveis, ações de indenização por perdas e danos materiais ou morais, recuperação de créditos e solução de conflitos judiciais e extrajudiciais.",
+    topics: [
+      "Ações indenizatórias por danos morais, materiais e lucros cessantes",
+      "Elaboração, análise e rescisão de contratos civis e comerciais com cláusulas protetivas",
+      "Cobrança judicial e extrajudicial de títulos de crédito e recuperação de valores",
+      "Defesa dos direitos do consumidor contra abusos bancários, fraudes e concessionárias",
+      "Ações de despejo, rescisões locatícias e litígios patrimoniais",
+      "Assessoria em notificações judiciais, medidas cautelares e acordos extrajudiciais",
+    ],
+    whatsAppText:
+      "Olá! Gostaria de consultar a equipe da Antunes & Martins sobre uma questão de Direito Cível / Contratos.",
+  },
+  {
+    id: "direito-criminal",
+    title: "Direito Criminal & Defesa Penal Combativa",
+    category: "Criminal · Delegacia · Audiência de Custódia · Habeas Corpus",
+    icon: Shield,
+    tag: "Flagrantes · Liberdade Provisória · Inquéritos · Tribunal do Júri · Recursos",
+    summary:
+      "Defesa técnica intransigente da liberdade e das garantias constitucionais, com atendimento ágil e combate diligente em todas as fases do processo penal.",
+    details:
+      "Situações criminais exigem intervenção jurídica imediata, estratégica e absolutamente sigilosa. A Antunes & Martins Advocacia Especializada acompanha o cliente desde a fase policial em flagrantes e depoimentos até os tribunais superiores, resguardando direitos fundamentais contra excessos e ilegalidades.",
+    topics: [
+      "Atendimento urgente em delegacias para prisão em flagrante e interrogatórios",
+      "Acompanhamento presencial em audiências de custódia e pedidos de liberdade provisória",
+      "Impetração de Habeas Corpus preventivo e liberatório perante Tribunais de Justiça e Superiores",
+      "Defesa combativa em inquéritos policiais, ações penais e Tribunal do Júri",
+      "Atuação em crimes contra o patrimônio, honra, delitos de trânsito e crimes da era digital",
+      "Execução penal, progressão de regime, livramento condicional e remição de pena",
+    ],
+    whatsAppText:
+      "Olá! Preciso de orientação jurídica urgente em Direito Criminal com a Antunes & Martins Advocacia.",
+  },
+  {
+    id: "direito-trabalhista",
+    title: "Direito do Trabalho (Trabalhista)",
+    category: "Trabalho · Reclamatórias · Rescisões · Verbas · Acidentes",
+    icon: Briefcase,
+    tag: "Verbas Rescisórias · Horas Extras · Insalubridade · Rescisão Indireta",
+    summary:
+      "Garantia integral dos direitos trabalhistas e suporte consultivo preventivo para relações de trabalho justas, equilibradas e em estrito cumprimento da lei.",
+    details:
+      "Tanto na defesa combativa do trabalhador lesado quanto na orientação estratégica para empresas evitarem passivos, o escritório Antunes & Martins entrega atuação aprofundada perante a Justiça do Trabalho, identificando irregularidades contratuais e buscando a justa reparação com celeridade.",
+    topics: [
+      "Reclamatórias trabalhistas para cobrança de verbas rescisórias não pagas",
+      "Reconhecimento de vínculo de emprego sem anotação em carteira de trabalho (CTPS)",
+      "Cobrança de horas extras, intervalos intrajornada, adicional noturno e descanso semanal",
+      "Adicionais de insalubridade e periculosidade em atividades de risco ou exposição a agentes nocivos",
+      "Ações por acidente de trabalho, doenças ocupacionais e estabilidade provisória",
+      "Rescisão indireta do contrato de trabalho ('justa causa no empregador') por falta grave ou assédio",
+    ],
+    whatsAppText:
+      "Olá! Gostaria de uma avaliação sobre os meus direitos trabalhistas com a Antunes & Martins Advocacia.",
+  },
+  {
+    id: "direito-familia-sucessoes",
+    title: "Direito de Família & Sucessões",
+    category: "Família · Divórcio · Pensão Alimentícia · Guarda · Inventários",
+    icon: HeartHandshake,
+    tag: "Inventário em Cartório · Partilhas de Bens · Divórcio · Alimentos & Guarda",
+    summary:
+      "Condução sensível, técnica e equilibrada para momentos decisivos da vida familiar, assegurando proteção aos filhos, acordos justos e tranquilidade patrimonial.",
+    details:
+      "Questões de família exigem sensibilidade humana ímpar combinada a rigor jurídico absoluto. Atuamos com dedicação em inventários ágeis em cartório e judiciais, divórcios consensuais e litigiosos, fixação e revisão de alimentos, guarda compartilhada e dissolução de união estável.",
+    topics: [
+      "Inventários extrajudiciais em cartório: transmissão célere de bens com economia tributária",
+      "Inventários judiciais, partilha de patrimônio litigioso e alvarás para levantamento de valores",
+      "Divórcio consensual e litigioso com partilha justa de patrimônio do casal",
+      "Fixação, revisão, exoneração e execução de pensão alimentícia atrasada",
+      "Ações de guarda, regulamentação de convivência e proteção de menores",
+      "Reconhecimento e dissolução de união estável, união homoafetiva e pactos antenupciais",
+    ],
+    whatsAppText:
+      "Olá! Gostaria de consultar a equipe sobre Direito de Família / Inventário / Divórcio com sigilo e discrição.",
+  },
+  {
     id: "direito-previdenciario",
     title: "Direito Previdenciário & Aposentadorias (INSS)",
-    category: "Previdenciário · Aposentadorias · Benefícios · Revisões",
+    category: "Previdenciário · Aposentadorias · BPC/LOAS · Benefícios · Revisões",
     icon: Award,
-    tag: "Aposentadoria Rural & Urbana · BPC/LOAS · Auxílio-Doença · Revisão da Vida Toda",
+    tag: "Aposentadoria por Idade · Rural & Urbana · BPC/LOAS · Auxílio-Doença · INSS",
     summary:
-      "Condução técnica, atenta e rigorosa para garantir o melhor benefício no INSS, destravando aposentadorias e revertendo indeferimentos indevidos com causa ganha.",
+      "Planejamento minucioso e atuação firme contra o INSS para desbloquear o benefício a que você tem direito, garantindo o melhor valor e recebimento de retroativos.",
     details:
-      "A aposentadoria é a conquista de uma vida inteira de trabalho e dedicação. O escritório Bruno Barroso atua com excelência no planejamento previdenciário minucioso, concessão rápida de benefícios no INSS e recursos judiciais combativos, garantindo o valor integral a que você tem direito com total segurança.",
+      "A conquista do benefício do INSS representa a segurança financeira da sua vida e da sua família. O escritório Antunes & Martins atua desde a análise do CNIS e planejamento previdenciário preventivo até a interposição de recursos administrativos e ações judiciais combativas contra indeferimentos indevidos.",
     topics: [
-      "Planejamento previdenciário estratégico para calcular a melhor data e o maior valor de aposentadoria",
-      "Aposentadoria por idade (urbana e para trabalhadores rurais de Turmalina e região)",
-      "Aposentadoria por tempo de contribuição e regras de transição vigentes",
-      "Aposentadoria especial para profissionais em atividades insalubres ou perigosas",
-      "BPC/LOAS para idosos a partir de 65 anos e pessoas com deficiência em vulnerabilidade",
-      "Auxílio por incapacidade temporária (auxílio-doença) e aposentadoria por invalidez",
-      "Pensão por morte, auxílio-reclusão, salário-maternidade e restabelecimento de benefícios cancelados",
-      "Ações judiciais contra o INSS para reversão de negativas e cobrança de retroativos",
+      "Planejamento previdenciário estratégico para conquistar o maior valor de benefício possível",
+      "Aposentadoria por idade urbana e rural (trabalhadores da lavoura e agricultura familiar de Nanuque e região)",
+      "Aposentadoria especial por tempo de exposição a agentes insalubres e regras de transição",
+      "Benefício de Prestação Continuada (BPC/LOAS) para idosos de 65+ anos e pessoas com deficiência",
+      "Auxílio por incapacidade temporária (auxílio-doença) e aposentadoria por invalidez permanente",
+      "Pensão por morte, salário-maternidade, auxílio-reclusão e reversão de indeferimentos judiciais",
     ],
     whatsAppText:
-      "Olá, Dr. Bruno Barroso! Gostaria de consultar sobre a minha aposentadoria / benefício do INSS.",
-  },
-  {
-    id: "assessoria-empresarial",
-    title: "Assessoria Jurídica Empresarial & Contratos",
-    category: "Direito Empresarial · Contratos · Blindagem · Cobranças",
-    icon: Building2,
-    tag: "Consultoria Contínua · Prevenção de Riscos · Cobrança de Créditos · Contratos Blindados",
-    summary:
-      "Parceria jurídica contínua e estratégica para empresas e comércios da região operarem com total segurança jurídica, tranquilidade contratual e redução de riscos.",
-    details:
-      "O crescimento de um negócio exige respaldo jurídico de alto nível. Comprovado pela confiança de parceiros expressivos do setor comercial e empresarial (como a Constrular Móveis), oferecemos assessoria preventiva e contenciosa completa, blindagem contratual, mitigação de passivos trabalhistas e recuperação eficiente de créditos.",
-    topics: [
-      "Consultoria jurídica preventiva contínua para empresas e comércios de Turmalina e Minas Gerais",
-      "Elaboração, análise e revisão criteriosa de contratos comerciais, societários e de fornecedores",
-      "Cobrança extrajudicial e judicial estratégica de inadimplentes e recuperação de ativos",
-      "Assessoria trabalhista preventiva e gestão de riscos em rotinas corporativas",
-      "Defesa técnica em litígios cíveis, execuções judiciais e relações de consumo",
-      "Adequação regulatória, estruturação de acordos comerciais e segurança patrimonial dos sócios",
-    ],
-    whatsAppText:
-      "Olá, Dr. Bruno Barroso! Gostaria de conversar sobre assessoria jurídica para a minha empresa.",
-  },
-  {
-    id: "direito-imobiliario",
-    title: "Direito Imobiliário & Regularização de Imóveis",
-    category: "Imobiliário · Usucapião · Escrituras · Posse Rural & Urbana",
-    icon: HomeIcon,
-    tag: "Usucapião Judicial & Extrajudicial · Escrituras · Regularização de Terras · RGI",
-    summary:
-      "Transformamos terrenos, imóveis rurais e urbanos irregulares ou com 'contratos de gaveta' em propriedades legalmente registradas e valorizadas perante o cartório.",
-    details:
-      "Um imóvel sem registro ou escritura definitiva coloca o patrimônio da família em risco e impede financiamentos ou vendas legais. O escritório Bruno Barroso atua com sólida experiência em usucapião, procedimentos em cartório de registro de imóveis, desmembramentos e defesas possessórias em toda a comarca de Turmalina e Vale do Jequitinhonha.",
-    topics: [
-      "Ações de usucapião judicial e usucapião extrajudicial célere diretamente no cartório (RGI)",
-      "Regularização de escrituras públicas pendentes, contratos de compra e venda e recibos de gaveta",
-      "Regularização fundiária de propriedades rurais, glebas, chácaras e terrenos urbanos",
-      "Inventário e partilha de bens imóveis com averbação definitiva de transferência",
-      "Elaboração e conferência de contratos de locação, compra, venda e permuta imobiliária",
-      "Defesa de posse: reintegração de posse, manutenção de posse e interdito proibitório",
-    ],
-    whatsAppText:
-      "Olá, Dr. Bruno Barroso! Tenho uma questão imobiliária / imóvel para regularizar (usucapião / escritura).",
-  },
-  {
-    id: "civel-familia-sucessoes",
-    title: "Direito Cível Estratégico, Família & Sucessões",
-    category: "Cível · Inventários · Partilhas · Divórcios · Indenizações",
-    icon: Scale,
-    tag: "Inventário Extrajudicial em Cartório · Partilhas · Divórcio · Danos Morais",
-    summary:
-      "Atuação resolutiva e acolhedora em inventários, divórcios e questões patrimoniais delicadas, garantindo clareza, proteção dos direitos e equilíbrio familiar.",
-    details:
-      "Momentos decisivos da vida civil e familiar demandam suporte técnico firme, comunicação transparente e respeito às relações afetivas. Conduzimos inventários ágeis em cartório e judiciais, ações de alimentos, partilhas justas e defesas cíveis com o compromisso ético que é marca registrada de Dr. Bruno Barroso e sua equipe.",
-    topics: [
-      "Inventários extrajudiciais em cartório: transmissão rápida de herança e economia tributária",
-      "Inventários judiciais contenciosos, alvarás para liberação de contas e partilhas complexas",
-      "Divórcio consensual e litigioso, partilha de patrimônio e dissolução de união estável",
-      "Fixação, revisão e execução de débitos de pensão alimentícia, guarda e convivência",
-      "Ações indenizatórias por perdas e danos materiais, danos morais e descumprimento contratual",
-      "Execução de títulos de crédito, recuperação de quantias devidas e defesas cíveis especializadas",
-    ],
-    whatsAppText:
-      "Olá, Dr. Bruno Barroso! Gostaria de orientação jurídica sobre inventário, família ou questão cível.",
+      "Olá! Gostaria de analisar a minha aposentadoria ou benefício do INSS com a Antunes & Martins Advocacia.",
   },
 ];
 
@@ -252,106 +271,105 @@ interface Review {
   badge: string;
   date: string;
   content: string;
-  reply?: string;
   highlight?: string;
 }
 
 const clientReviews: Review[] = [
   {
-    name: "Vitória Monteiro",
+    name: "Lucas Gustavo",
+    badge: "Local Guide · 3 avaliações · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Tem conhecimento das causas e cuida dos seus interesses com suporte integral",
+    content:
+      "Ótima profissional, tem conhecimento das causas que advoga e e presta todo suporte para o cliente. Recomendo demais para quem está querendo um escritório que cuida dos seus interesses sem que você tenha que se preocupar em acompanhar o processo também!!",
+  },
+  {
+    name: "Apps Brasil",
+    badge: "Local Guide · 31 avaliações · 3 fotos · 5 Estrelas",
+    date: "um ano atrás",
+    highlight: "Rico conhecimento jurídico e trabalho maravilhoso",
+    content:
+      "Parabéns a essa excelente Dra. Pelo rico conhecimento jurídico, continue assim realizando esse trabalho maravilhoso. Seja luz nos caminhos obscuro e desembaraço nos nosda vida.",
+  },
+  {
+    name: "Robson Dias Martins",
+    badge: "Local Guide · 12 avaliações · 49 fotos · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Contratei de Betim: a Dra. Giovana resolveu rapidamente, muito competente!",
+    content:
+      "Sou de Betim contratei os serviços da Dr Giovana resolveu rapidamente muito competente!",
+  },
+  {
+    name: "Charles Castro Luz Júnior",
+    badge: "4 avaliações · 1 foto · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Instruiu da melhor forma com alta capacidade técnica",
+    content:
+      "Precisei de serviços advocatícios de assuntos de redes sociais e a Dr.Giovanna me instruiu da melhor forma, recomendo 👍",
+  },
+  {
+    name: "Élmada Luz",
+    badge: "2 avaliações · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Melhor profissional da cidade em Nanuque - MG",
+    content:
+      "Melhor profissional da cidade.",
+  },
+  {
+    name: "Elene Rangel",
+    badge: "4 avaliações · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Profissional competente, responsável com amor e dedicação ao que faz",
+    content:
+      "Profissional competente e responsável. Amor e dedicação ao que faz!",
+  },
+  {
+    name: "Gabriela dos Santos Oliveira Moreira",
     badge: "Avaliação Verificada no Google · 5 Estrelas",
-    date: "5 meses atrás",
-    highlight: "Escritório eficiente, resolutivo e profissionalismo excepcional",
+    date: "2 anos atrás",
+    highlight: "Profissional exemplar, dedicada e estudiosa",
     content:
-      "Escritório completamente eficiente, resolutivo e de um profissionalismo excepcional. Obtive o apoio da equipe em um momento decisivo e realmente fizeram a diferença no meu caso. Agradeço a eficiência do grupo, em especial da Dr. Karin profissional competente, inteligente e carinhosamente empática. Indico os serviços do escritório de olhos fechados!",
+      "Profissional exemplar, dedicada e estudiosa.",
   },
   {
-    name: "Maria Enedina Dina Antunes",
+    name: "Rayanna Costa Coimbra",
+    badge: "4 avaliações · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Competente, dedicada e responsável",
+    content:
+      "Competente, dedicada e responsável.",
+  },
+  {
+    name: "Junior Pereira",
+    badge: "2 avaliações · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Excelente advogada, super capacitada",
+    content:
+      "Excelente advogada. Super capacitada.",
+  },
+  {
+    name: "Caroline Soares",
+    badge: "3 avaliações · 1 foto · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Excelente profissional. Recomendo de coração",
+    content:
+      "Excelente profissional. Recomendo 👏🏻👏🏻❤️",
+  },
+  {
+    name: "Rosilane Martins",
     badge: "Avaliação Verificada no Google · 5 Estrelas",
-    date: "5 meses atrás",
-    highlight: "Transmitiu segurança, confiança e foi ágil no atendimento",
+    date: "2 anos atrás",
+    highlight: "Excelente profissional, muito dedicada no que faz",
     content:
-      "Tive uma ótima experiência com o Dr. Bruno Barroso. Demonstrou muito profissionalismo, atenção e conhecimento na área jurídica. Sempre explicou cada etapa do processo de forma clara, transmitindo segurança e confiança. Além disso, foi ágil no atendimento e se mostrou comprometido com o melhor resultado possível. Recomendo seu trabalho para quem busca um advogado responsável, ético e eficiente.",
+      "Excelente profissional, mto dedicada no q faz.",
   },
   {
-    name: "Constrular Móveis",
-    badge: "Cliente Empresarial · Avaliação Verificada",
-    date: "um ano atrás",
-    highlight: "Assessoria jurídica de excelência, dedicação e confiança ímpar",
+    name: "Vivian Silva Costa",
+    badge: "Avaliação Verificada no Google · 5 Estrelas",
+    date: "2 anos atrás",
+    highlight: "Excelente profissional de extrema confiança",
     content:
-      "Sempre que precisamos de assessoria jurídica, é ao Dr. Bruno que recorremos. Um profissional ímpar, de uma competência e dedicação admiráveis, que nos atende com atenção e clareza em cada detalhe. Nossa parceria é motivo de tranquilidade e confiança. Sucesso sempre, Bruno!",
-  },
-  {
-    name: "Deliany Batista",
-    badge: "Aposentadoria Concedida · Causa Ganha",
-    date: "um ano atrás",
-    highlight: "Cuidou da aposentadoria do meu pai: Causa Ganha!",
-    content:
-      "Dr. Bruno cuidou da aposentadoria do meu pai com muita atenção e profissionalismo. Sempre prestativo e claro nas orientações, conduziu todo o processo de forma exemplar. Resultado: causa ganha! Excelente trabalho!",
-  },
-  {
-    name: "Víctor Sousa",
-    badge: "Avaliação Verificada no Google · 2 fotos",
-    date: "5 meses atrás",
-    highlight: "O melhor e maior escritório de advocacia da comarca de Turmalina",
-    content:
-      "O melhor e maior escritório de advocacia da comarca de Turmalina, atendimento humanizado e com alto grau de excelência. Super recomendo!",
-  },
-  {
-    name: "Ivon Rodrigues",
-    badge: "Avaliação Verificada no Google · 2 avaliações",
-    date: "5 meses atrás",
-    highlight: "Fiquei muito feliz com o resultado: 2 processos positivos pra nós!",
-    content:
-      "Tive a honra de me apresentar os serviços dessa equipe, e fiquei muito feliz com o resultado. 2 processos positivos pra nós. OBRIGADO",
-  },
-  {
-    name: "Flavio Orsine",
-    badge: "Avaliação Verificada no Google · 3 avaliações",
-    date: "5 meses atrás",
-    highlight: "Profundo conhecimento jurídico e profissionalismo impecável",
-    content:
-      "Equipe com profundo conhecimento jurídico e comprometimento em buscar a melhor solução. Excelente atendimento e profissionalismo impecável.",
-  },
-  {
-    name: "Jean Kellmison de Oliveira Azevedo",
-    badge: "Avaliação Verificada no Google · 1 foto",
-    date: "5 meses atrás",
-    highlight: "Mais alto nível técnico e acolhimento humano",
-    content:
-      "Equipe jurídica com mais alto nível técnico. Atendimento humanizado, sempre em busca de acolhimento e melhor resolução para o cliente.",
-  },
-  {
-    name: "Tassia Dias Cordeiro",
-    badge: "Avaliação Verificada no Google · 4 fotos",
-    date: "5 meses atrás",
-    highlight: "Profissionais muito competentes e atenciosos",
-    content:
-      "Profissionais muito competentes e atenciosos. Recomendo de olhos fechados, o melhor da região!!",
-  },
-  {
-    name: "Wesleymuito lindo este louvor Oliveira",
-    badge: "Avaliação Verificada no Google",
-    date: "5 meses atrás",
-    highlight: "Atendimento excelente, esse advogado é top, o melhor da região",
-    content:
-      "Atendimento excelente, o Dr. Bruno e suas secretárias estão de parabéns, esse advogado é top, top, é o melhor da região. 👏👏👏👏",
-  },
-  {
-    name: "Jennifer Karin",
-    badge: "Avaliação no Google · 3 avaliações",
-    date: "5 meses atrás",
-    highlight: "Atendimento humanizado e de excelência",
-    content:
-      "Atendimento humanizado e de excelência, com equipe altamente profissional, transparente e comprometida em oferecer segurança e confiança ao cliente.",
-  },
-  {
-    name: "Rivanildo",
-    badge: "Avaliação Verificada no Google · 4 avaliações",
-    date: "um ano atrás",
-    highlight: "Defendendo seus direitos com total dedicação",
-    content:
-      "Grande profissional que atua com dedicação, defendendo seus direitos. Aqui você está bem assistido!",
+      "Excelente Profissional!!",
   },
 ];
 
@@ -375,7 +393,7 @@ function Heading({
       )}
       <h2
         className={`font-serif text-3xl leading-[1.12] tracking-[-0.02em] font-bold sm:text-4xl lg:text-[2.75rem] ${
-          dark ? "text-white" : "text-[#14110e]"
+          dark ? "text-white" : "text-[#0b1e2e]"
         }`}
       >
         {children}
@@ -383,7 +401,7 @@ function Heading({
       {description && (
         <p
           className={`mt-4 text-sm leading-7 ${
-            dark ? "text-[#c7bcb1]" : "text-[#544941]"
+            dark ? "text-[#c2d3e2]" : "text-[#475b6d]"
           }`}
         >
           {description}
@@ -418,31 +436,31 @@ export default function Home() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <main className="relative min-h-screen bg-[#0b0a09] text-[#ede5dc]">
+      <main className="relative min-h-screen bg-[#071521] text-[#edf2f7]">
         {/* Top Notification Strip */}
-        <div className="relative z-50 border-b border-[#d4a843]/25 bg-[#14110e] px-4 py-2.5 text-xs text-[#d6cbc2]">
+        <div className="relative z-50 border-b border-[#dfb135]/25 bg-[#0b1e2e] px-4 py-2.5 text-xs text-[#cbd5e1]">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-2 sm:px-6">
             <div className="flex items-center gap-2 font-medium">
               <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#f5d77f] opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-[#d4a843]" />
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#fad962] opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-[#dfb135]" />
               </span>
-              <span className="text-[11px] sm:text-xs text-[#fbeabb] font-semibold">
-                Bruno Barroso · Advocacia e Assessoria Jurídica · Nota Máxima 5,0 ★ no Google (55 avaliações)
+              <span className="text-[11px] sm:text-xs text-[#faecba] font-semibold">
+                Antunes & Martins Advocacia Especializada · Nota Máxima 5,0 ★ no Google (39 avaliações)
               </span>
             </div>
             <div className="flex items-center gap-4 text-[11px] sm:text-xs">
               <a
-                href={getWhatsAppUrl("Olá, Dr. Bruno Barroso! Gostaria de falar com o escritório.")}
+                href={getWhatsAppUrl("Olá! Gostaria de falar com o escritório Antunes & Martins Advocacia.")}
                 target="_blank"
                 rel="noreferrer"
-                className="font-bold text-[#f5d77f] transition-colors hover:text-white"
+                className="font-bold text-[#fad962] transition-colors hover:text-white"
               >
                 WhatsApp: {PHONE_DISPLAY}
               </a>
-              <span className="hidden text-[#4d433b] sm:inline">|</span>
-              <span className="hidden text-[#c7bcb1] sm:inline">
-                Turmalina - MG · Atendimento Presencial & Online Nacional
+              <span className="hidden text-[#1e4566] sm:inline">|</span>
+              <span className="hidden text-[#c2d3e2] sm:inline">
+                Nanuque - MG · Atendimento Online e Presencial
               </span>
             </div>
           </div>
@@ -452,24 +470,24 @@ export default function Home() {
         <header
           className={`sticky top-0 z-40 transition-all duration-300 ${
             scrolled
-              ? "border-b border-[#d4a843]/25 bg-[#0b0a09]/95 backdrop-blur-md shadow-lg shadow-black/70"
-              : "border-b border-[#241e17] bg-[#0b0a09]/90 backdrop-blur-xs"
+              ? "border-b border-[#dfb135]/25 bg-[#071521]/95 backdrop-blur-md shadow-lg shadow-black/70"
+              : "border-b border-[#14324a] bg-[#071521]/90 backdrop-blur-xs"
           }`}
         >
           <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 lg:px-12">
             {/* Logo */}
             <a
               href="#inicio"
-              aria-label="Bruno Barroso Advocacia e Assessoria Jurídica"
+              aria-label="Antunes & Martins Advocacia Especializada"
               className="group flex shrink-0 items-center mr-6 lg:mr-10 xl:mr-14 transition-transform hover:scale-[1.02]"
             >
               <Image
                 src={LOGO_SRC}
-                alt="Bruno Barroso - Advocacia e Assessoria Jurídica"
+                alt="Antunes & Martins Advocacia Especializada"
                 width={480}
-                height={120}
+                height={150}
                 priority
-                className="h-[46px] w-auto object-contain drop-shadow-[0_2px_12px_rgba(212,168,67,0.25)] sm:h-[52px] lg:h-[58px] xl:h-[64px]"
+                className="h-[46px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(223,177,53,0.30)] sm:h-[52px] lg:h-[58px] xl:h-[64px]"
               />
             </a>
 
@@ -502,7 +520,7 @@ export default function Home() {
             <div className="flex items-center gap-3 shrink-0 ml-4 lg:ml-6">
               <GlowingButton
                 href={getWhatsAppUrl(
-                  "Olá, Dr. Bruno Barroso! Gostaria de consultar sobre a minha causa com o escritório."
+                  "Olá! Gostaria de consultar sobre o meu caso com a Antunes & Martins Advocacia Especializada."
                 )}
                 target="_blank"
                 size="sm"
@@ -516,7 +534,7 @@ export default function Home() {
                 type="button"
                 aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="grid size-10 place-items-center rounded-lg border border-[#d4a843]/30 bg-[#1a1612] text-[#fbeabb] transition-colors hover:border-[#f5d77f] hover:text-white lg:hidden cursor-pointer"
+                className="grid size-10 place-items-center rounded-lg border border-[#dfb135]/30 bg-[#0f273b] text-[#faecba] transition-colors hover:border-[#fad962] hover:text-white lg:hidden cursor-pointer"
               >
                 {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -530,15 +548,15 @@ export default function Home() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="overflow-hidden border-b border-[#d4a843]/20 bg-[#14110e] px-5 py-6 lg:hidden"
+                className="overflow-hidden border-b border-[#dfb135]/20 bg-[#0b1e2e] px-5 py-6 lg:hidden"
               >
                 <div className="flex flex-col gap-4">
-                  <div className="border-b border-[#d4a843]/20 pb-3">
+                  <div className="border-b border-[#dfb135]/20 pb-3">
                     <Image
                       src={LOGO_SRC}
-                      alt="Bruno Barroso Advocacia e Assessoria Jurídica"
+                      alt="Antunes & Martins Advocacia Especializada"
                       width={280}
-                      height={70}
+                      height={90}
                       className="h-10 w-auto object-contain"
                     />
                   </div>
@@ -554,7 +572,7 @@ export default function Home() {
                       key={href}
                       href={href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-sm font-semibold tracking-wide text-[#d6cbc2] transition-colors hover:text-[#f5d77f]"
+                      className="text-sm font-semibold tracking-wide text-[#cbd5e1] transition-colors hover:text-[#fad962]"
                     >
                       {label}
                     </a>
@@ -562,14 +580,14 @@ export default function Home() {
                   <div className="pt-3">
                     <GlowingButton
                       href={getWhatsAppUrl(
-                        "Olá, Dr. Bruno Barroso! Gostaria de consultar sobre a minha demanda jurídica."
+                        "Olá! Gostaria de uma consultoria com a Dra. Giovana e equipe Antunes & Martins."
                       )}
                       target="_blank"
                       size="md"
                       variant="gold"
                       className="w-full justify-center"
                     >
-                      <WhatsAppIcon size={16} /> Falar com o Dr. Bruno
+                      <WhatsAppIcon size={16} /> Falar no WhatsApp
                     </GlowingButton>
                   </div>
                 </div>
@@ -581,11 +599,11 @@ export default function Home() {
         {/* Hero Section */}
         <section
           id="inicio"
-          className="relative isolate overflow-hidden border-b border-[#d4a843]/20 bg-gradient-to-b from-[#0b0a09] via-[#14110e] to-[#1a1612] py-16 sm:py-24 lg:py-28"
+          className="relative isolate overflow-hidden border-b border-[#dfb135]/20 bg-gradient-to-b from-[#071521] via-[#0b1e2e] to-[#0f273b] py-16 sm:py-24 lg:py-28"
         >
-          {/* Ambient Lighting & Metallic Gold Glows */}
-          <div className="pointer-events-none absolute -right-20 -top-20 -z-10 size-[38rem] rounded-full bg-[#d4a843]/12 blur-[110px]" />
-          <div className="pointer-events-none absolute -left-20 bottom-0 -z-10 size-[32rem] rounded-full bg-[#96681e]/10 blur-[100px]" />
+          {/* Ambient Lighting & Metallic Gold Sheens */}
+          <div className="pointer-events-none absolute -right-20 -top-20 -z-10 size-[38rem] rounded-full bg-[#dfb135]/12 blur-[120px]" />
+          <div className="pointer-events-none absolute -left-20 bottom-0 -z-10 size-[34rem] rounded-full bg-[#13476a]/25 blur-[110px]" />
 
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-12">
             <motion.div
@@ -597,50 +615,50 @@ export default function Home() {
               {/* Authority Badge */}
               <motion.div
                 variants={reveal}
-                className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#d4a843]/40 bg-[#1a1612]/90 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#fbeabb] shadow-xs backdrop-blur-xs"
+                className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#dfb135]/40 bg-[#0f273b]/90 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#faecba] shadow-xs backdrop-blur-xs"
               >
-                <span className="size-2 shrink-0 rounded-full bg-[#f5d77f] shadow-[0_0_8px_#f5d77f]" />
-                <span>BRUNO BARROSO · ADVOCACIA E ASSESSORIA JURÍDICA · OAB/MG</span>
+                <span className="size-2 shrink-0 rounded-full bg-[#fad962] shadow-[0_0_8px_#fad962]" />
+                <span>ANTUNES & MARTINS · ADVOCACIA ESPECIALIZADA · NANUQUE - MG</span>
               </motion.div>
 
               <motion.h1
                 variants={reveal}
                 className="font-serif text-3xl font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl lg:text-[3.35rem]"
               >
-                Justiça com ética, clareza e compromisso na defesa dos{" "}
-                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#f5d77f] via-[#fbeabb] to-[#d4a843]">
-                  seus direitos e do seu patrimônio.
+                Advocacia combativa e especializada na defesa dos{" "}
+                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#fad962] via-[#faecba] to-[#dfb135]">
+                  seus direitos e do seu futuro.
                 </span>
               </motion.h1>
 
               <motion.p
                 variants={reveal}
-                className="mt-6 max-w-xl text-[15px] leading-7 text-[#c7bcb1] sm:text-base sm:leading-8"
+                className="mt-6 max-w-xl text-[15px] leading-7 text-[#c2d3e2] sm:text-base sm:leading-8"
               >
-                ⚖️ Mais de <strong className="text-white">14 anos de tradição jurídica</strong> em Turmalina e região. Atuação especializada em <strong className="text-white">Direito Previdenciário (Aposentadorias do INSS)</strong>, <strong className="text-white">Assessoria Jurídica Empresarial</strong>, <strong className="text-white">Direito Imobiliário</strong> e <strong className="text-white">Cível & Sucessões</strong>. Rigor técnico apurado, acolhimento humanizado e agilidade comprovada em resultados.
+                ⚖️ <strong className="text-white">Nossa missão é buscar justiça com ética e profissionalismo.</strong> Atuação jurídica de alto rigor técnico e atendimento acolhedor em <strong className="text-white">Direito Cível</strong>, <strong className="text-white">Criminal</strong>, <strong className="text-white">Trabalhista</strong>, <strong className="text-white">Família & Sucessões</strong> e <strong className="text-white">Previdenciário (INSS)</strong>. Atendimento presencial em Nanuque - MG e assessoria digital segura para todo o Brasil.
               </motion.p>
 
               {/* Fast Trust Indicators */}
               <motion.div
                 variants={reveal}
-                className="mt-7 flex flex-wrap items-center gap-2.5 text-[11px] font-semibold text-[#d6cbc2]"
+                className="mt-7 flex flex-wrap items-center gap-2.5 text-[11px] font-semibold text-[#cbd5e1]"
               >
                 <a
                   href={GOOGLE_SEARCH_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#d4a843]/35 bg-[#1a1612]/90 px-3.5 py-1.5 shadow-xs text-[#fbeabb] hover:border-[#f5d77f] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#dfb135]/35 bg-[#0f273b]/90 px-3.5 py-1.5 shadow-xs text-[#faecba] hover:border-[#fad962] hover:text-white transition-colors"
                 >
-                  <Star size={13} className="fill-[#d4a843] text-[#d4a843]" />
-                  Nota Máxima 5,0 ★ no Google (55 avaliações)
+                  <Star size={13} className="fill-[#dfb135] text-[#dfb135]" />
+                  Nota Máxima 5,0 ★ no Google (39 avaliações)
                 </a>
-                <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#d4a843]/35 bg-[#1a1612]/90 px-3.5 py-1.5 shadow-xs text-[#fbeabb]">
-                  <Scale size={13} className="text-[#f5d77f]" />
-                  +14 Anos de Advocacia
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#dfb135]/35 bg-[#0f273b]/90 px-3.5 py-1.5 shadow-xs text-[#faecba]">
+                  <Scale size={13} className="text-[#fad962]" />
+                  Advocacia Especializada & Ética
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#d4a843]/35 bg-[#1a1612]/90 px-3.5 py-1.5 shadow-xs text-[#fbeabb]">
-                  <MapPin size={13} className="text-[#f5d77f]" />
-                  Turmalina - MG & Atendimento Nacional
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#dfb135]/35 bg-[#0f273b]/90 px-3.5 py-1.5 shadow-xs text-[#faecba]">
+                  <MapPin size={13} className="text-[#fad962]" />
+                  Nanuque - MG & Atendimento Nacional
                 </span>
               </motion.div>
 
@@ -651,14 +669,14 @@ export default function Home() {
               >
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dr. Bruno Barroso! Gostaria de agendar uma consulta com seu escritório."
+                    "Olá! Gostaria de agendar uma consulta com o escritório Antunes & Martins Advocacia Especializada."
                   )}
                   target="_blank"
                   size="lg"
                   variant="gold"
                   className="rounded-lg shadow-md"
                 >
-                  <WhatsAppIcon size={17} /> Falar com o Dr. Bruno
+                  <WhatsAppIcon size={17} /> Falar no WhatsApp
                 </GlowingButton>
 
                 <GlowingButton
@@ -673,9 +691,9 @@ export default function Home() {
 
               <motion.p
                 variants={reveal}
-                className="mt-4 text-xs text-[#8f8174]"
+                className="mt-4 text-xs text-[#829bb0]"
               >
-                Atendimento presencial na Av. Lauro Machado, 390 - Centro, Turmalina - MG ou suporte jurídico digital seguro para todo o Brasil.
+                Sede física na R. Caxambú, 230 - Centro, Nanuque - MG ou atendimento jurídico online com total sigilo.
               </motion.p>
             </motion.div>
 
@@ -687,95 +705,95 @@ export default function Home() {
               className="relative mx-auto w-full max-w-[460px]"
             >
               {/* Outer Golden Halo Frame */}
-              <div className="relative aspect-[3/3.85] overflow-hidden rounded-2xl border-2 border-[#d4a843]/50 bg-[#1a1612] shadow-2xl shadow-black/80">
+              <div className="relative aspect-[3/3.85] overflow-hidden rounded-2xl border-2 border-[#dfb135]/50 bg-[#0f273b] shadow-2xl shadow-black/80">
                 <Image
                   src={FOTO_HERO_SRC}
-                  alt="Dr. Bruno Barroso — Advocacia e Assessoria Jurídica"
+                  alt="Dra. Giovana e equipe da Antunes & Martins Advocacia Especializada"
                   fill
                   priority
                   unoptimized
-                  className="object-cover object-[54%_20%]"
+                  className="object-cover object-top"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0b0a09] via-[#0b0a09]/65 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#071521] via-[#071521]/65 to-transparent" />
               </div>
 
               {/* Authority Floating Card */}
-              <div className="absolute -bottom-6 -left-3 max-w-[320px] rounded-xl border border-[#d4a843]/50 bg-[#14110e]/95 p-4 shadow-2xl backdrop-blur-md sm:-left-6 sm:p-5">
-                <div className="flex items-center gap-1 text-[#d4a843]">
+              <div className="absolute -bottom-6 -left-3 max-w-[320px] rounded-xl border border-[#dfb135]/50 bg-[#0b1e2e]/95 p-4 shadow-2xl backdrop-blur-md sm:-left-6 sm:p-5">
+                <div className="flex items-center gap-1 text-[#dfb135]">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       size={14}
-                      className="fill-[#d4a843] text-[#d4a843]"
+                      className="fill-[#dfb135] text-[#dfb135]"
                     />
                   ))}
                   <span className="ml-1 text-xs font-bold text-white">5,0 ★</span>
                 </div>
                 <p className="mt-1 font-serif text-sm font-bold text-white">
-                  Dr. Bruno Barroso
+                  Antunes & Martins
                 </p>
-                <p className="text-[11px] font-medium text-[#fbeabb]">
-                  Advocacia e Assessoria Jurídica · +14 Anos
+                <p className="text-[11px] font-medium text-[#faecba]">
+                  Advocacia Especializada · Nanuque - MG
                 </p>
-                <p className="mt-1 text-[10px] leading-4 text-[#c7bcb1]">
-                  &ldquo;Profissionalismo exemplar, atenção e conhecimento. Explicou cada etapa com clareza, transmitindo segurança e confiança.&rdquo;
+                <p className="mt-1 text-[10px] leading-4 text-[#c2d3e2]">
+                  &ldquo;Ótima profissional, tem conhecimento das causas que advoga e presta todo suporte para o cliente sem que você precise se preocupar!&rdquo;
                 </p>
               </div>
 
               {/* Floating Top Badge */}
-              <div className="absolute -right-3 top-6 rounded-lg border border-[#d4a843]/45 bg-[#14110e]/95 px-3 py-2 text-right shadow-xl backdrop-blur-md sm:-right-5">
-                <div className="flex items-center gap-1.5 text-[#f5d77f]">
+              <div className="absolute -right-3 top-6 rounded-lg border border-[#dfb135]/45 bg-[#0b1e2e]/95 px-3 py-2 text-right shadow-xl backdrop-blur-md sm:-right-5">
+                <div className="flex items-center gap-1.5 text-[#fad962]">
                   <Sparkles size={14} />
                   <span className="text-[10px] font-bold uppercase tracking-wider text-white">
-                    55 Avaliações Reais
+                    39 Avaliações Reais
                   </span>
                 </div>
-                <p className="text-[10px] text-[#8f8174]">Google 5,0 Estrelas</p>
+                <p className="text-[10px] text-[#829bb0]">Google 5,0 Estrelas</p>
               </div>
             </motion.div>
           </div>
         </section>
 
         {/* 4 Pillars Strip (Barra de Destaques) */}
-        <section className="border-b border-[#d4a843]/20 bg-[#14110e] px-5 py-8 text-white sm:px-8 lg:px-12">
+        <section className="border-b border-[#dfb135]/20 bg-[#0b1e2e] px-5 py-8 text-white sm:px-8 lg:px-12">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 md:grid-cols-4">
             <div className="flex items-start gap-3.5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#d4a843]/30 bg-[#1a1612] text-[#f5d77f]">
-                <Star size={18} className="fill-[#d4a843]" />
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#dfb135]/30 bg-[#14324a] text-[#fad962]">
+                <Star size={18} className="fill-[#dfb135]" />
               </span>
               <div>
                 <p className="font-serif text-sm font-bold text-white">Nota 5,0 no Google</p>
-                <p className="text-[11px] text-[#c7bcb1]">55 avaliações unânimes</p>
+                <p className="text-[11px] text-[#c2d3e2]">39 avaliações unânimes</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3.5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#d4a843]/30 bg-[#1a1612] text-[#f5d77f]">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#dfb135]/30 bg-[#14324a] text-[#fad962]">
                 <Scale size={18} />
               </span>
               <div>
-                <p className="font-serif text-sm font-bold text-white">+14 Anos de Atuação</p>
-                <p className="text-[11px] text-[#c7bcb1]">Tradição, ética e solidez</p>
+                <p className="font-serif text-sm font-bold text-white">Ética & Rigor Técnico</p>
+                <p className="text-[11px] text-[#c2d3e2]">Defesa intransigente</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3.5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#d4a843]/30 bg-[#1a1612] text-[#f5d77f]">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#dfb135]/30 bg-[#14324a] text-[#fad962]">
                 <Award size={18} />
               </span>
               <div>
-                <p className="font-serif text-sm font-bold text-white">Previdenciário & Cível</p>
-                <p className="text-[11px] text-[#c7bcb1]">Aposentadorias e Contratos</p>
+                <p className="font-serif text-sm font-bold text-white">5 Áreas de Atuação</p>
+                <p className="text-[11px] text-[#c2d3e2]">Cível, Crime, Trabalho, Família, INSS</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3.5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#d4a843]/30 bg-[#1a1612] text-[#f5d77f]">
-                <Building2 size={18} />
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[#dfb135]/30 bg-[#14324a] text-[#fad962]">
+                <MapPin size={18} />
               </span>
               <div>
-                <p className="font-serif text-sm font-bold text-white">Turmalina & Região</p>
-                <p className="text-[11px] text-[#c7bcb1]">Presencial e Digital Seguro</p>
+                <p className="font-serif text-sm font-bold text-white">Online & Presencial</p>
+                <p className="text-[11px] text-[#c2d3e2]">Sede em Nanuque e todo o país</p>
               </div>
             </div>
           </div>
@@ -784,10 +802,10 @@ export default function Home() {
         {/* Sobre o Escritório & Equipe */}
         <section
           id="sobre"
-          className="scroll-mt-24 border-b border-[#e8ded3] bg-[#faf7f2] py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-b border-[#e6dfd3] bg-[#f9f8f5] py-20 text-[#0b1e2e] sm:py-28 lg:py-32"
         >
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:px-12">
-            {/* Portrait at Library */}
+            {/* Portrait at Office */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -795,37 +813,37 @@ export default function Home() {
               variants={reveal}
               className="relative mx-auto w-full max-w-[480px]"
             >
-              <div className="relative aspect-[3/3.8] overflow-hidden rounded-2xl border-2 border-[#d4a843]/45 bg-[#f4efe6] shadow-xl">
+              <div className="relative aspect-[3/3.8] overflow-hidden rounded-2xl border-2 border-[#dfb135]/45 bg-[#f2efe8] shadow-xl">
                 <Image
                   src={FOTO_ABOUT_SRC}
-                  alt="Dr. Bruno Barroso — Biblioteca e Acervo Jurídico"
+                  alt="Antunes & Martins Advocacia Especializada - Escritório Oficial"
                   fill
                   sizes="(max-width: 1024px) 90vw, 45vw"
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#14110e]/75 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#0b1e2e]/75 to-transparent" />
               </div>
 
               {/* Authority badge card */}
-              <div className="absolute -bottom-6 right-3 max-w-[340px] rounded-xl border border-[#d4a843]/50 bg-white p-5 shadow-xl sm:-right-6">
-                <div className="flex items-center gap-2 text-[#96681e]">
+              <div className="absolute -bottom-6 right-3 max-w-[340px] rounded-xl border border-[#dfb135]/50 bg-white p-5 shadow-xl sm:-right-6">
+                <div className="flex items-center gap-2 text-[#9e751e]">
                   <Award size={18} />
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#96681e]">
-                    Corpo Jurídico de Excelência
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#9e751e]">
+                    Corpo Jurídico Especializado
                   </p>
                 </div>
-                <p className="mt-1 font-serif text-lg font-bold leading-snug text-[#14110e]">
-                  Dr. Bruno Barroso & Equipe
+                <p className="mt-1 font-serif text-lg font-bold leading-snug text-[#0b1e2e]">
+                  Antunes & Martins Advocacia
                 </p>
-                <p className="mt-0.5 text-xs font-semibold text-[#96681e]">
-                  Dra. Karin & Advogados Especialistas
+                <p className="mt-0.5 text-xs font-semibold text-[#9e751e]">
+                  Dra. Giovana & Equipe Jurídica
                 </p>
-                <p className="mt-1 text-[11px] leading-4 text-[#544941]">
-                  Av. Lauro Machado, 390 - Centro, Turmalina - MG · Comarca de Turmalina e Região
+                <p className="mt-1 text-[11px] leading-4 text-[#475b6d]">
+                  R. Caxambú, 230 - Centro, Nanuque - MG · Comarca de Nanuque e Atendimento Nacional
                 </p>
               </div>
 
-              <span className="absolute -left-4 -top-4 -z-10 size-24 border-l-2 border-t-2 border-[#d4a843]/50 sm:-left-7 sm:-top-7 sm:size-32" />
+              <span className="absolute -left-4 -top-4 -z-10 size-24 border-l-2 border-t-2 border-[#dfb135]/50 sm:-left-7 sm:-top-7 sm:size-32" />
             </motion.div>
 
             {/* Story & Biography */}
@@ -837,34 +855,34 @@ export default function Home() {
             >
               <motion.div
                 variants={reveal}
-                className="mb-4 inline-flex items-center gap-2.5 rounded-md border border-[#d4a843]/40 bg-[#fdf9ee] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#96681e] shadow-xs"
+                className="mb-4 inline-flex items-center gap-2.5 rounded-md border border-[#dfb135]/40 bg-[#fdf8eb] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#9e751e] shadow-xs"
               >
-                <span className="size-2 shrink-0 rounded-full bg-[#d4a843]" />
-                <span>CONHEÇA O ESCRITÓRIO BRUNO BARROSO</span>
+                <span className="size-2 shrink-0 rounded-full bg-[#dfb135]" />
+                <span>CONHEÇA A ANTUNES & MARTINS ADVOCACIA</span>
               </motion.div>
 
               <motion.h2
                 variants={reveal}
-                className="font-serif text-3xl font-bold leading-[1.14] tracking-[-0.02em] text-[#14110e] sm:text-4xl lg:text-[2.85rem]"
+                className="font-serif text-3xl font-bold leading-[1.14] tracking-[-0.02em] text-[#0b1e2e] sm:text-4xl lg:text-[2.85rem]"
               >
-                Mais de 14 anos de compromisso ético, rigor técnico e dedicação incansável para{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#96681e] via-[#d4a843] to-[#b58428]">
-                  proteger o que é seu por direito.
+                Nossa missão é buscar justiça com ética e profissionalismo para{" "}
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#9e751e] via-[#dfb135] to-[#c79a29]">
+                  proteger os seus direitos fundamentais.
                 </span>
               </motion.h2>
 
               <motion.p
                 variants={reveal}
-                className="mt-6 max-w-xl text-[15px] leading-7 text-[#544941]"
+                className="mt-6 max-w-xl text-[15px] leading-7 text-[#475b6d]"
               >
-                O escritório <strong className="font-bold text-[#14110e]">Bruno Barroso — Advocacia e Assessoria Jurídica</strong> consolidou-se como a principal referência da Comarca de Turmalina e do Vale do Jequitinhonha por aliar profundo conhecimento técnico a um atendimento verdadeiramente humanizado, ético e empático. Liderado pelo <strong className="font-bold text-[#14100e]">Dr. Bruno Barroso</strong> e com a atuação destacada da <strong className="font-bold text-[#14110e]">Dra. Karin</strong> e equipe, o escritório já conduziu centenas de famílias e empresas a vitórias expressivas.
+                O escritório <strong className="font-bold text-[#0b1e2e]">Antunes & Martins Advocacia Especializada</strong> destaca-se em Nanuque e em todo o estado de Minas Gerais como sinônimo de dedicação combativa, rigor técnico apurado e acolhimento humano exemplar. Liderado por advogadas dedicadas e estudiosas, o escritório conduz cada caso com compromisso absoluto, cuidando dos seus interesses para que você tenha tranquilidade em cada etapa.
               </motion.p>
 
               <motion.p
                 variants={reveal}
-                className="mt-4 max-w-xl text-[15px] leading-7 text-[#544941]"
+                className="mt-4 max-w-xl text-[15px] leading-7 text-[#475b6d]"
               >
-                Seja para garantir a aposentadoria justa do trabalhador rural ou urbano no INSS, prestar assessoria jurídica continuada para empresas consolidadas (como a Constrular Móveis), regularizar terras e imóveis por usucapião ou resolver inventários e partilhas com serenidade, nossa missão é oferecer clareza inegociável em cada passo do processo.
+                Com ampla atuação em <strong className="font-bold text-[#0b1e2e]">Direito Cível</strong>, <strong className="font-bold text-[#0b1e2e]">Criminal</strong>, <strong className="font-bold text-[#0b1e2e]">Trabalhista</strong>, <strong className="font-bold text-[#0b1e2e]">Família & Sucessões</strong> e <strong className="font-bold text-[#0b1e2e]">Previdenciário (INSS)</strong>, prestamos suporte jurídico tanto presencialmente na nossa sede no Centro de Nanuque quanto de maneira digital com tecnologia e segurança para clientes de qualquer localidade.
               </motion.p>
 
               {/* 3 Value Pillars */}
@@ -872,39 +890,39 @@ export default function Home() {
                 variants={reveal}
                 className="mt-8 grid gap-4 sm:grid-cols-3"
               >
-                <div className="rounded-xl border border-[#e8ded3] bg-white p-4 shadow-xs">
-                  <span className="text-[#96681e]">
+                <div className="rounded-xl border border-[#e6dfd3] bg-white p-4 shadow-xs">
+                  <span className="text-[#9e751e]">
                     <HeartHandshake size={20} />
                   </span>
-                  <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#14110e]">
-                    Atendimento Humanizado
+                  <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#0b1e2e]">
+                    Suporte & Acolhimento
                   </h3>
-                  <p className="mt-1 text-[11px] leading-5 text-[#544941]">
-                    Acolhimento transparente e empático, explicando cada etapa sem juridiquês e com atenção a cada detalhe.
+                  <p className="mt-1 text-[11px] leading-5 text-[#475b6d]">
+                    Atendimento atencioso que explica cada detalhe com clareza, tirando dúvidas e proporcionando total segurança.
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-[#e8ded3] bg-white p-4 shadow-xs">
-                  <span className="text-[#96681e]">
+                <div className="rounded-xl border border-[#e6dfd3] bg-white p-4 shadow-xs">
+                  <span className="text-[#9e751e]">
                     <Clock size={20} />
                   </span>
-                  <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#14110e]">
-                    Agilidade & Resultados
+                  <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#0b1e2e]">
+                    Agilidade na Resolução
                   </h3>
-                  <p className="mt-1 text-[11px] leading-5 text-[#544941]">
-                    Histórico comprovado de processos vitoriosos, agilidade perante órgãos públicos e combatividade inabalável.
+                  <p className="mt-1 text-[11px] leading-5 text-[#475b6d]">
+                    Diligência imediata em delegacias, tribunais, juizados e cartórios, buscando soluções eficientes e respostas rápidas.
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-[#e8ded3] bg-white p-4 shadow-xs">
-                  <span className="text-[#96681e]">
+                <div className="rounded-xl border border-[#e6dfd3] bg-white p-4 shadow-xs">
+                  <span className="text-[#9e751e]">
                     <Shield size={20} />
                   </span>
-                  <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#14110e]">
-                    Segurança Patrimonial
+                  <h3 className="mt-2 text-xs font-bold uppercase tracking-wider text-[#0b1e2e]">
+                    Ética & Combate Firme
                   </h3>
-                  <p className="mt-1 text-[11px] leading-5 text-[#544941]">
-                    Blindagem jurídica sólida para empresas, regularização de imóveis e transmissão hereditária com tranquilidade.
+                  <p className="mt-1 text-[11px] leading-5 text-[#475b6d]">
+                    Defesa técnica intransigente pautada no Código de Ética e na lealdade aos objetivos e direitos dos nossos clientes.
                   </p>
                 </div>
               </motion.div>
@@ -912,14 +930,14 @@ export default function Home() {
               <motion.div variants={reveal} className="mt-9 flex items-center gap-4">
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dr. Bruno Barroso! Gostaria de conversar com o senhor sobre a minha causa."
+                    "Olá! Gostaria de conversar com a Dra. Giovana e equipe da Antunes & Martins sobre a minha demanda."
                   )}
                   target="_blank"
                   size="md"
                   variant="gold"
                   className="rounded-lg shadow-sm"
                 >
-                  <WhatsAppIcon size={16} /> Falar com o Dr. Bruno
+                  <WhatsAppIcon size={16} /> Falar com a Equipe
                 </GlowingButton>
               </motion.div>
             </motion.div>
@@ -929,7 +947,7 @@ export default function Home() {
         {/* Pilares de Atuação & Especialidades */}
         <section
           id="atuacao"
-          className="scroll-mt-24 border-b border-[#d4a843]/20 bg-[#14110e] py-20 sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-b border-[#dfb135]/20 bg-[#0b1e2e] py-20 sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <motion.div
@@ -942,15 +960,15 @@ export default function Home() {
               <Heading
                 dark
                 eyebrow="ÁREAS DE ATUAÇÃO & ESPECIALIDADES"
-                description="Expertise jurídica multidisciplinar de mais de 14 anos com foco em Direito Previdenciário (INSS), Assessoria Empresarial, Direito Imobiliário e Cível & Sucessões."
+                description="Expertise jurídica multidisciplinar com foco em Direito Cível, Criminal, Trabalhista, Família & Sucessões e Previdenciário (INSS)."
               >
                 Soluções jurídicas estratégicas para{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#f5d77f] via-[#fbeabb] to-[#d4a843]">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#fad962] via-[#faecba] to-[#dfb135]">
                   você, sua família e sua empresa.
                 </span>
               </Heading>
-              <p className="max-w-[280px] pb-1 text-xs leading-6 text-[#c7bcb1]">
-                Clique em uma das áreas abaixo para conferir as demandas atendidas e iniciar seu atendimento direto pelo WhatsApp com a equipe.
+              <p className="max-w-[280px] pb-1 text-xs leading-6 text-[#c2d3e2]">
+                Clique em uma das áreas abaixo para conferir as demandas atendidas e iniciar seu atendimento direto pelo WhatsApp com o escritório.
               </p>
             </motion.div>
 
@@ -959,7 +977,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.12 }}
               variants={stagger}
-              className="mt-12 grid gap-6 md:grid-cols-2"
+              className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
             >
               {practiceAreas.map((area, index) => {
                 const Icon = area.icon;
@@ -967,25 +985,25 @@ export default function Home() {
                   <motion.article
                     key={area.id}
                     variants={reveal}
-                    className="group flex min-h-[340px] flex-col rounded-2xl border border-[#d4a843]/25 bg-[#1a1612] p-6 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-[#f5d77f] hover:shadow-2xl hover:shadow-[#d4a843]/15 sm:p-8"
+                    className="group flex min-h-[340px] flex-col rounded-2xl border border-[#dfb135]/25 bg-[#0f273b] p-6 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-[#fad962] hover:shadow-2xl hover:shadow-[#dfb135]/15 sm:p-8"
                   >
                     <div className="flex items-start justify-between">
-                      <span className="grid size-12 place-items-center rounded-xl border border-[#d4a843]/30 bg-[#241e17] text-[#f5d77f] shadow-xs transition-colors group-hover:border-[#f5d77f] group-hover:bg-[#d4a843] group-hover:text-[#0b0a09]">
+                      <span className="grid size-12 place-items-center rounded-xl border border-[#dfb135]/30 bg-[#14324a] text-[#fad962] shadow-xs transition-colors group-hover:border-[#fad962] group-hover:bg-[#dfb135] group-hover:text-[#071521]">
                         <Icon size={22} strokeWidth={1.75} />
                       </span>
-                      <span className="font-serif text-2xl font-bold text-[#d4a843]/40 transition-colors group-hover:text-[#f5d77f]">
+                      <span className="font-serif text-2xl font-bold text-[#dfb135]/40 transition-colors group-hover:text-[#fad962]">
                         0{index + 1}
                       </span>
                     </div>
 
                     <div className="mt-5">
-                      <span className="inline-block rounded-md border border-[#d4a843]/30 bg-[#241e17] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#fbeabb]">
+                      <span className="inline-block rounded-md border border-[#dfb135]/30 bg-[#14324a] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#faecba]">
                         {area.tag}
                       </span>
                       <h3 className="mt-3 font-serif text-[1.28rem] font-bold leading-snug text-white">
                         {area.title}
                       </h3>
-                      <p className="mt-2.5 text-xs leading-6 text-[#c7bcb1]">
+                      <p className="mt-2.5 text-xs leading-6 text-[#c2d3e2]">
                         {area.summary}
                       </p>
                     </div>
@@ -993,7 +1011,7 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={() => setActiveArea(area)}
-                      className="group/link mt-auto inline-flex w-fit items-center gap-2 pt-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[#f5d77f] hover:text-white cursor-pointer"
+                      className="group/link mt-auto inline-flex w-fit items-center gap-2 pt-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[#fad962] hover:text-white cursor-pointer"
                     >
                       Ver detalhes e demandas{" "}
                       <ArrowRight
@@ -1008,25 +1026,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Por Que Escolher o Escritório Bruno Barroso - 4 Diferenciais Reais */}
+        {/* Por Que Escolher a Antunes & Martins - 4 Diferenciais Reais */}
         <section
           id="diferenciais"
-          className="scroll-mt-24 border-y border-[#e8ded3] bg-white py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-y border-[#e6dfd3] bg-white py-20 text-[#0b1e2e] sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <Heading
-                eyebrow="REPUTAÇÃO MÁXIMA 5,0 ★ NO GOOGLE (55 AVALIAÇÕES)"
-                description="Clareza inegociável, atendimento acolhedor, agilidade nas decisões e solidez para proteger seu futuro em Turmalina e Minas Gerais."
+                eyebrow="REPUTAÇÃO MÁXIMA 5,0 ★ NO GOOGLE (39 AVALIAÇÕES)"
+                description="Conhecimento técnico sólido, suporte atencioso ao cliente, agilidade nas decisões e ética intransigente em Nanuque e Minas Gerais."
               >
                 Por que confiar a sua causa ao{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#96681e] via-[#d4a843] to-[#b58428]">
-                  Escritório Bruno Barroso?
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#9e751e] via-[#dfb135] to-[#c79a29]">
+                  Escritório Antunes & Martins?
                 </span>
               </Heading>
               <GlowingButton
                 href={getWhatsAppUrl(
-                  "Olá, Dr. Bruno Barroso! Gostaria de consultar sobre a minha situação jurídica com o escritório."
+                  "Olá! Gostaria de consultar sobre o meu caso com a equipe Antunes & Martins Advocacia Especializada."
                 )}
                 target="_blank"
                 size="md"
@@ -1040,118 +1058,118 @@ export default function Home() {
             {/* Grid 4 Pilares baseados nas avaliações reais */}
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {/* Pilar 1 */}
-              <div className="flex flex-col rounded-2xl border border-[#e8ded3] bg-[#faf7f2] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#d4a843] hover:shadow-md">
-                <div className="flex size-12 items-center justify-center rounded-xl border border-[#d4a843]/30 bg-white text-[#96681e] shadow-xs">
+              <div className="flex flex-col rounded-2xl border border-[#e6dfd3] bg-[#f9f8f5] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#dfb135] hover:shadow-md">
+                <div className="flex size-12 items-center justify-center rounded-xl border border-[#dfb135]/30 bg-white text-[#9e751e] shadow-xs">
                   <HeartHandshake size={22} />
                 </div>
-                <h3 className="mt-4 font-serif text-lg font-bold text-[#14110e]">
-                  Atendimento Humanizado
+                <h3 className="mt-4 font-serif text-lg font-bold text-[#0b1e2e]">
+                  Suporte Integral ao Cliente
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-[#544941]">
-                  Acolhimento empático pelo Dr. Bruno e Dra. Karin. Explicamos cada fase em linguagem acessível, trazendo paz, previsibilidade e confiança.
+                <p className="mt-2 text-xs leading-6 text-[#475b6d]">
+                  Cuidamos de cada detalhe da sua causa para que você tenha tranquilidade, sem a angústia de acompanhar burocracias sozinho.
                 </p>
-                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#96681e]">
-                  &ldquo;Em especial da Dr. Karin profissional carinhosamente empática&rdquo;
+                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#9e751e]">
+                  &ldquo;Cuida dos seus interesses sem que você tenha que se preocupar&rdquo;
                 </span>
               </div>
 
               {/* Pilar 2 */}
-              <div className="flex flex-col rounded-2xl border border-[#e8ded3] bg-[#faf7f2] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#d4a843] hover:shadow-md">
-                <div className="flex size-12 items-center justify-center rounded-xl border border-[#d4a843]/30 bg-white text-[#96681e] shadow-xs">
-                  <Clock size={22} />
+              <div className="flex flex-col rounded-2xl border border-[#e6dfd3] bg-[#f9f8f5] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#dfb135] hover:shadow-md">
+                <div className="flex size-12 items-center justify-center rounded-xl border border-[#dfb135]/30 bg-white text-[#9e751e] shadow-xs">
+                  <Award size={22} />
                 </div>
-                <h3 className="mt-4 font-serif text-lg font-bold text-[#14110e]">
-                  Agilidade & Causa Ganha
+                <h3 className="mt-4 font-serif text-lg font-bold text-[#0b1e2e]">
+                  Rico Conhecimento Jurídico
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-[#544941]">
-                  Combatividade diligente perante juizados, cartórios e INSS, destravando benefícios e processos com alto índice de resolução.
+                <p className="mt-2 text-xs leading-6 text-[#475b6d]">
+                  Advogadas estudiosas, exemplares e capacitadas, aplicando estratégias modernas e fundamentadas nas decisões mais recentes dos tribunais.
                 </p>
-                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#96681e]">
-                  &ldquo;Cuidou da aposentadoria do meu pai: Causa ganha!&rdquo;
+                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#9e751e]">
+                  &ldquo;Profissional exemplar, dedicada e com rico conhecimento&rdquo;
                 </span>
               </div>
 
               {/* Pilar 3 */}
-              <div className="flex flex-col rounded-2xl border border-[#e8ded3] bg-[#faf7f2] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#d4a843] hover:shadow-md">
-                <div className="flex size-12 items-center justify-center rounded-xl border border-[#d4a843]/30 bg-white text-[#96681e] shadow-xs">
-                  <Briefcase size={22} />
+              <div className="flex flex-col rounded-2xl border border-[#e6dfd3] bg-[#f9f8f5] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#dfb135] hover:shadow-md">
+                <div className="flex size-12 items-center justify-center rounded-xl border border-[#dfb135]/30 bg-white text-[#9e751e] shadow-xs">
+                  <Clock size={22} />
                 </div>
-                <h3 className="mt-4 font-serif text-lg font-bold text-[#14110e]">
-                  Confiança Empresarial
+                <h3 className="mt-4 font-serif text-lg font-bold text-[#0b1e2e]">
+                  Agilidade Comprovada
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-[#544941]">
-                  Parceria sólida com grandes comércios e empresas da comarca, garantindo segurança jurídica contínua e mitigação de riscos.
+                <p className="mt-2 text-xs leading-6 text-[#475b6d]">
+                  Postura diligente perante órgãos públicos e juizados, destravando processos e trazendo soluções rápidas para os clientes.
                 </p>
-                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#96681e]">
-                  &ldquo;Nossa parceria é motivo de tranquilidade e confiança&rdquo;
+                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#9e751e]">
+                  &ldquo;Resolveu rapidamente, muito competente!&rdquo;
                 </span>
               </div>
 
               {/* Pilar 4 */}
-              <div className="flex flex-col rounded-2xl border border-[#e8ded3] bg-[#faf7f2] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#d4a843] hover:shadow-md">
-                <div className="flex size-12 items-center justify-center rounded-xl border border-[#d4a843]/30 bg-white text-[#96681e] shadow-xs">
-                  <Award size={22} />
+              <div className="flex flex-col rounded-2xl border border-[#e6dfd3] bg-[#f9f8f5] p-6 shadow-xs transition-all hover:-translate-y-1 hover:border-[#dfb135] hover:shadow-md">
+                <div className="flex size-12 items-center justify-center rounded-xl border border-[#dfb135]/30 bg-white text-[#9e751e] shadow-xs">
+                  <Scale size={22} />
                 </div>
-                <h3 className="mt-4 font-serif text-lg font-bold text-[#14110e]">
-                  Maior da Comarca de Turmalina
+                <h3 className="mt-4 font-serif text-lg font-bold text-[#0b1e2e]">
+                  Reconhecimento em Nanuque
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-[#544941]">
-                  Mais de 14 anos de tradição jurídica reconhecida como a estrutura mais preparada e resolutiva da região do Vale do Jequitinhonha.
+                <p className="mt-2 text-xs leading-6 text-[#475b6d]">
+                  Avaliada como a melhor advocacia da cidade, com clientes atendidos com sucesso em Nanuque, Teófilo Otoni, Betim e em todo o Brasil.
                 </p>
-                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#96681e]">
-                  &ldquo;O melhor e maior escritório da comarca de Turmalina&rdquo;
+                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider text-[#9e751e]">
+                  &ldquo;Melhor profissional da cidade · 5,0 Estrelas&rdquo;
                 </span>
               </div>
             </div>
 
             {/* Como Funciona o Atendimento */}
-            <div className="mt-16 rounded-2xl border border-[#e8ded3] bg-[#f4efe6] p-8 sm:p-12">
+            <div className="mt-16 rounded-2xl border border-[#e6dfd3] bg-[#f2efe8] p-8 sm:p-12">
               <div className="max-w-xl">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#96681e]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#9e751e]">
                   PASSO A PASSO TRANSPARENTE & RESOLUTIVO
                 </p>
-                <h3 className="mt-2 font-serif text-2xl font-bold text-[#14110e] sm:text-3xl">
+                <h3 className="mt-2 font-serif text-2xl font-bold text-[#0b1e2e] sm:text-3xl">
                   Como funciona o nosso atendimento
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-[#544941]">
-                  Sem burocracias confusas. Orientamos você com clareza desde o primeiro contato até a conclusão e vitória da sua causa.
+                <p className="mt-2 text-xs leading-6 text-[#475b6d]">
+                  Sem burocracias confusas. Orientamos você com clareza desde o primeiro contato até a resolução da sua causa.
                 </p>
               </div>
 
               <div className="mt-8 grid gap-6 sm:grid-cols-3">
-                <div className="rounded-xl border border-[#e8ded3] bg-white p-6">
-                  <span className="font-serif text-2xl font-bold text-[#d4a843]">
+                <div className="rounded-xl border border-[#e6dfd3] bg-white p-6">
+                  <span className="font-serif text-2xl font-bold text-[#dfb135]">
                     01
                   </span>
-                  <h4 className="mt-2 text-sm font-bold text-[#14110e]">
+                  <h4 className="mt-2 text-sm font-bold text-[#0b1e2e]">
                     Contato Inicial no WhatsApp
                   </h4>
-                  <p className="mt-2 text-xs leading-5 text-[#544941]">
-                    Você envia uma mensagem contando sua situação, seja uma aposentadoria, assessoria empresarial, contrato ou imóvel. Nossa equipe responde prontamente.
+                  <p className="mt-2 text-xs leading-5 text-[#475b6d]">
+                    Você envia uma mensagem relatando sua necessidade (seja cível, criminal, trabalhista, família ou INSS). Nossa equipe atende prontamente.
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-[#e8ded3] bg-white p-6">
-                  <span className="font-serif text-2xl font-bold text-[#d4a843]">
+                <div className="rounded-xl border border-[#e6dfd3] bg-white p-6">
+                  <span className="font-serif text-2xl font-bold text-[#dfb135]">
                     02
                   </span>
-                  <h4 className="mt-2 text-sm font-bold text-[#14110e]">
-                    Diagnóstico Jurídico & Estratégia
+                  <h4 className="mt-2 text-sm font-bold text-[#0b1e2e]">
+                    Análise Criteriosa & Estratégia
                   </h4>
-                  <p className="mt-2 text-xs leading-5 text-[#544941]">
-                    O Dr. Bruno Barroso e a equipe avaliam CNIS, certidões, escrituras ou contratos para desenhar o caminho mais rápido, seguro e eficiente.
+                  <p className="mt-2 text-xs leading-5 text-[#475b6d]">
+                    Avaliamos documentos, contratos, notificações ou o processo para traçar a linha de defesa ou ação judicial mais segura e favorável.
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-[#e8ded3] bg-white p-6">
-                  <span className="font-serif text-2xl font-bold text-[#d4a843]">
+                <div className="rounded-xl border border-[#e6dfd3] bg-white p-6">
+                  <span className="font-serif text-2xl font-bold text-[#dfb135]">
                     03
                   </span>
-                  <h4 className="mt-2 text-sm font-bold text-[#14110e]">
-                    Ação Ágil & Acompanhamento Próximo
+                  <h4 className="mt-2 text-sm font-bold text-[#0b1e2e]">
+                    Atuação Combativa & Acompanhamento
                   </h4>
-                  <p className="mt-2 text-xs leading-5 text-[#544941]">
-                    Protocolos e ações imediatas perante o INSS, juizados ou cartórios, com você informado de cada avanço com tranquilidade.
+                  <p className="mt-2 text-xs leading-5 text-[#475b6d]">
+                    Execução ágil de defesas e protocolos perante a Justiça e cartórios, mantendo você informado de cada andamento com tranquilidade.
                   </p>
                 </div>
               </div>
@@ -1159,21 +1177,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Avaliações no Google (Depoimentos Reais - 5,0 ★ · 55 avaliações) */}
+        {/* Avaliações no Google (Depoimentos Reais - 5,0 ★ · 39 avaliações) */}
         <section
           id="avaliacoes"
-          className="scroll-mt-24 border-b border-[#d4a843]/20 bg-[#14110e] py-20 text-white sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-b border-[#dfb135]/20 bg-[#0b1e2e] py-20 text-white sm:py-28 lg:py-32"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <Heading
                 dark
                 eyebrow="PROVA SOCIAL & DEPOIMENTOS NO GOOGLE"
-                description="Nota Máxima 5,0 ★ no Google Meu Negócio em Turmalina · MG, com 55 avaliações 100% positivas de quem confiou sua causa ao escritório."
+                description="Nota Máxima 5,0 ★ no Google Meu Negócio em Nanuque · MG, com 39 avaliações 100% positivas de quem confiou sua causa ao escritório."
               >
-                O que dizem os clientes do{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#f5d77f] via-[#fbeabb] to-[#d4a843]">
-                  Escritório Bruno Barroso
+                O que dizem os clientes da{" "}
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#fad962] via-[#faecba] to-[#dfb135]">
+                  Antunes & Martins Advocacia
                 </span>
               </Heading>
 
@@ -1181,11 +1199,11 @@ export default function Home() {
                 href={GOOGLE_SEARCH_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 rounded-xl border border-[#d4a843]/30 bg-[#1a1612] px-5 py-3 text-xs font-bold text-white shadow-xs transition-all hover:border-[#f5d77f] hover:bg-[#241e17]"
+                className="inline-flex items-center gap-3 rounded-xl border border-[#dfb135]/30 bg-[#0f273b] px-5 py-3 text-xs font-bold text-white shadow-xs transition-all hover:border-[#fad962] hover:bg-[#14324a]"
               >
                 <GoogleIcon size={18} />
-                <span>Ver 55 avaliações no Google</span>
-                <ArrowUpRight size={15} className="text-[#f5d77f]" />
+                <span>Ver 39 avaliações no Google</span>
+                <ArrowUpRight size={15} className="text-[#fad962]" />
               </a>
             </div>
 
@@ -1194,40 +1212,40 @@ export default function Home() {
               {clientReviews.map((review) => (
                 <article
                   key={review.name}
-                  className="flex flex-col justify-between rounded-2xl border border-[#d4a843]/20 bg-[#1a1612] p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#f5d77f] hover:shadow-2xl hover:shadow-[#d4a843]/10"
+                  className="flex flex-col justify-between rounded-2xl border border-[#dfb135]/20 bg-[#0f273b] p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#fad962] hover:shadow-2xl hover:shadow-[#dfb135]/10"
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-[#d4a843]">
+                      <div className="flex items-center gap-1 text-[#dfb135]">
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
                             size={14}
-                            className="fill-[#d4a843] text-[#d4a843]"
+                            className="fill-[#dfb135] text-[#dfb135]"
                           />
                         ))}
                       </div>
-                      <span className="rounded-md border border-[#d4a843]/25 bg-[#241e17] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#fbeabb]">
+                      <span className="rounded-md border border-[#dfb135]/25 bg-[#14324a] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#faecba]">
                         {review.badge}
                       </span>
                     </div>
 
                     {review.highlight && (
-                      <p className="mt-3 text-xs font-bold text-[#f5d77f]">
+                      <p className="mt-3 text-xs font-bold text-[#fad962]">
                         {review.highlight}
                       </p>
                     )}
 
-                    <p className="mt-3 text-xs leading-6 text-[#ede5dc]">
+                    <p className="mt-3 text-xs leading-6 text-[#edf2f7]">
                       &ldquo;{review.content}&rdquo;
                     </p>
                   </div>
 
-                  <div className="mt-6 border-t border-[#2b231b] pt-4">
+                  <div className="mt-6 border-t border-[#1a3e5c] pt-4">
                     <p className="font-serif text-sm font-bold text-white">
                       {review.name}
                     </p>
-                    <p className="text-[10px] text-[#8f8174]">{review.date}</p>
+                    <p className="text-[10px] text-[#829bb0]">{review.date}</p>
                   </div>
                 </article>
               ))}
@@ -1235,19 +1253,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contato & Localização da Sede em Turmalina - MG */}
+        {/* Contato & Localização da Sede em Nanuque - MG */}
         <section
           id="contato"
-          className="scroll-mt-24 border-t border-[#e8ded3] bg-white py-20 text-[#14110e] sm:py-28 lg:py-32"
+          className="scroll-mt-24 border-t border-[#e6dfd3] bg-white py-20 text-[#0b1e2e] sm:py-28 lg:py-32"
         >
           <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20 lg:px-12">
             <div>
               <Heading
                 eyebrow="CONTATO & ATENDIMENTO JURÍDICO"
-                description="Converse diretamente com o Dr. Bruno Barroso e sua equipe jurídica. Oferecemos atendimento presencial acolhedor no Centro de Turmalina e suporte digital seguro para todo o Brasil."
+                description="Converse diretamente com as advogadas da Antunes & Martins Advocacia Especializada. Oferecemos atendimento presencial na nossa sede no Centro de Nanuque e assessoria digital segura para todo o Brasil."
               >
                 Estamos prontos para{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#96681e] via-[#d4a843] to-[#b58428]">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#9e751e] via-[#dfb135] to-[#c79a29]">
                   orientar você e proteger o seu direito.
                 </span>
               </Heading>
@@ -1255,7 +1273,7 @@ export default function Home() {
               <div className="mt-9 flex flex-col items-start gap-4">
                 <GlowingButton
                   href={getWhatsAppUrl(
-                    "Olá, Dr. Bruno Barroso! Gostaria de agendar um atendimento com o escritório."
+                    "Olá! Gostaria de agendar um atendimento com a Antunes & Martins Advocacia Especializada."
                   )}
                   target="_blank"
                   size="lg"
@@ -1264,153 +1282,157 @@ export default function Home() {
                 >
                   <WhatsAppIcon size={17} /> Iniciar Conversa no WhatsApp
                 </GlowingButton>
-                <p className="text-xs text-[#544941]">
-                  WhatsApp oficial:{" "}
-                  <strong className="text-[#14110e]">{PHONE_DISPLAY}</strong>
-                </p>
+                <div className="text-xs text-[#475b6d] space-y-1">
+                  <p>
+                    WhatsApp Principal:{" "}
+                    <strong className="text-[#0b1e2e]">{PHONE_DISPLAY}</strong>
+                  </p>
+                  <p>
+                    Contato Adicional:{" "}
+                    <strong className="text-[#0b1e2e]">{PHONE_SECONDARY_DISPLAY}</strong>
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-10 space-y-4 text-xs text-[#544941]">
+              <div className="mt-10 space-y-4 text-xs text-[#475b6d]">
                 <div className="flex items-start gap-3">
-                  <Clock size={16} className="mt-0.5 shrink-0 text-[#96681e]" />
+                  <Clock size={16} className="mt-0.5 shrink-0 text-[#9e751e]" />
                   <div>
-                    <p className="font-bold text-[#14110e]">
+                    <p className="font-bold text-[#0b1e2e]">
                       Horário de Funcionamento
                     </p>
-                    <p className="mt-0.5 text-[#3d342f]">
-                      Segunda a Sexta-feira · Abre às 08:00
+                    <p className="mt-0.5 text-[#2c3e50]">
+                      Segunda a Sexta-feira · Abertura a partir das 08:00
                     </p>
-                    <p className="text-[11px] font-semibold text-[#96681e]">
-                      Atendimento Presencial & Atendimento Digital Nacional
+                    <p className="text-[11px] font-semibold text-[#9e751e]">
+                      Atendimento Presencial & Atendimento Online Nacional
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 pt-1">
-                  <Phone size={16} className="shrink-0 text-[#96681e]" />
+                  <Phone size={16} className="shrink-0 text-[#9e751e]" />
                   <a
                     href={`tel:+${WHATSAPP_NUMBER}`}
-                    className="font-bold text-[#14110e] transition-colors hover:text-[#96681e]"
+                    className="font-bold text-[#0b1e2e] transition-colors hover:text-[#9e751e]"
                   >
-                    {PHONE_DISPLAY} (WhatsApp e Ligações)
+                    {PHONE_DISPLAY} / {PHONE_SECONDARY_DISPLAY}
                   </a>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <InstagramIcon size={16} className="shrink-0 text-[#96681e]" />
+                  <InstagramIcon size={16} className="shrink-0 text-[#9e751e]" />
                   <a
                     href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium text-[#3d342f] transition-colors hover:text-[#96681e]"
+                    className="font-medium text-[#2c3e50] transition-colors hover:text-[#9e751e]"
                   >
                     {INSTAGRAM_HANDLE} (Instagram Oficial)
                   </a>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Mail size={16} className="shrink-0 text-[#96681e]" />
+                  <Mail size={16} className="shrink-0 text-[#9e751e]" />
                   <a
                     href={`mailto:${EMAIL_CONTACT}`}
-                    className="font-medium text-[#3d342f] transition-colors hover:text-[#96681e]"
+                    className="font-medium text-[#2c3e50] transition-colors hover:text-[#9e751e]"
                   >
                     {EMAIL_CONTACT}
                   </a>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin size={16} className="mt-0.5 shrink-0 text-[#96681e]" />
-                  <span className="font-medium text-[#3d342f]">{ADDRESS_TEXT}</span>
+                  <MapPin size={16} className="mt-0.5 shrink-0 text-[#9e751e]" />
+                  <span className="font-medium text-[#2c3e50]">{ADDRESS_TEXT}</span>
                 </div>
               </div>
             </div>
 
             {/* Office & Schedule Card */}
-            <div className="relative overflow-hidden rounded-2xl border border-[#d4a843]/35 bg-[#faf7f2] p-7 shadow-lg sm:p-10">
-              <div className="absolute right-0 top-0 h-1.5 w-32 bg-gradient-to-r from-[#d4a843] to-[#f5d77f]" />
+            <div className="relative overflow-hidden rounded-2xl border border-[#dfb135]/35 bg-[#f9f8f5] p-7 shadow-lg sm:p-10">
+              <div className="absolute right-0 top-0 h-1.5 w-32 bg-gradient-to-r from-[#dfb135] to-[#fad962]" />
 
               <div className="flex items-center gap-4">
                 <Image
                   src={LOGO_SRC}
-                  alt="Bruno Barroso Advocacia e Assessoria Jurídica"
+                  alt="Antunes & Martins Advocacia Especializada"
                   width={380}
-                  height={95}
+                  height={120}
                   className="h-16 w-auto object-contain sm:h-20"
                 />
               </div>
 
-              <address className="mt-7 max-w-md text-sm not-italic leading-7 text-[#544941]">
-                <strong className="font-bold text-[#14110e]">
-                  Bruno Barroso — Advocacia e Assessoria Jurídica
+              <address className="mt-7 max-w-md text-sm not-italic leading-7 text-[#475b6d]">
+                <strong className="font-bold text-[#0b1e2e]">
+                  Antunes & Martins Advocacia Especializada
                 </strong>
                 <br />
-                Dr. Bruno Barroso · OAB/MG · +14 Anos de Experiência
-                <br />
-                Dra. Karin & Corpo Jurídico Especializado
+                Dra. Giovana & Corpo Jurídico Especializado
                 <br />
                 {ADDRESS_TEXT}
               </address>
 
               {/* Weekly schedule table */}
-              <div className="mt-6 rounded-xl border border-[#e8ded3] bg-white p-4 text-xs">
-                <p className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#96681e]">
+              <div className="mt-6 rounded-xl border border-[#e6dfd3] bg-white p-4 text-xs">
+                <p className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#9e751e]">
                   Disponibilidade & Modalidades
                 </p>
-                <div className="grid grid-cols-2 gap-y-2 text-[#544941]">
+                <div className="grid grid-cols-2 gap-y-2 text-[#475b6d]">
                   <span>Atendimento Presencial</span>
-                  <span className="text-right font-bold text-[#14110e]">
-                    Abre às 08:00 (Seg a Sex)
+                  <span className="text-right font-bold text-[#0b1e2e]">
+                    Segunda a Sexta (Horário Comercial)
                   </span>
-                  <span>Atendimento Digital</span>
-                  <span className="text-right font-bold text-[#96681e]">
-                    Turmalina e Todo o Brasil via WhatsApp
+                  <span>Atendimento Online</span>
+                  <span className="text-right font-bold text-[#9e751e]">
+                    Nanuque e Todo o Brasil via WhatsApp
                   </span>
                   <span>Sede Física</span>
-                  <span className="text-right text-[#14110e]">Turmalina - MG</span>
+                  <span className="text-right text-[#0b1e2e]">Nanuque - MG</span>
                   <span>Áreas de Foco</span>
-                  <span className="text-right text-[#14110e]">Previdenciário, Empresarial & Imóveis</span>
+                  <span className="text-right text-[#0b1e2e]">Cível, Crime, Trabalho, Família, INSS</span>
                 </div>
               </div>
 
-              <div className="my-7 h-px bg-[#e8ded3]" />
+              <div className="my-7 h-px bg-[#e6dfd3]" />
 
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <p className="text-xs text-[#786c63]">
+                <p className="text-xs text-[#6e8294]">
                   Atendimento ético, confidencial e resolutivo
                 </p>
                 <a
                   href={getWhatsAppUrl(
-                    "Olá, Dr. Bruno Barroso! Gostaria de agendar um atendimento no escritório."
+                    "Olá! Gostaria de agendar um atendimento com a Antunes & Martins Advocacia Especializada."
                   )}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#d4a843]/50 bg-white px-5 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#96681e] transition-colors hover:border-[#d4a843] hover:bg-[#fdf9ee] hover:text-[#14110e]"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#dfb135]/50 bg-white px-5 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#9e751e] transition-colors hover:border-[#dfb135] hover:bg-[#fdf8eb] hover:text-[#0b1e2e]"
                 >
-                  <WhatsAppIcon size={14} /> Falar com o Dr. Bruno <ArrowUpRight size={14} />
+                  <WhatsAppIcon size={14} /> Falar no WhatsApp <ArrowUpRight size={14} />
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pre-Footer CTA Strip - Deep Obsidian & Gold Metallic Banner */}
-        <section className="border-t border-[#d4a843]/30 bg-gradient-to-r from-[#0b0a09] via-[#1a1612] to-[#0b0a09] px-5 py-14 text-white sm:px-8 sm:py-16 lg:px-12">
+        {/* Pre-Footer CTA Strip - Deep Sovereign Petrol & Gold Metallic Banner */}
+        <section className="border-t border-[#dfb135]/30 bg-gradient-to-r from-[#071521] via-[#0f273b] to-[#071521] px-5 py-14 text-white sm:px-8 sm:py-16 lg:px-12">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-7 sm:flex-row sm:items-center">
             <div>
-              <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#fbeabb]">
-                <Sparkles size={13} /> BRUNO BARROSO · ADVOCACIA E ASSESSORIA JURÍDICA
+              <p className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#faecba]">
+                <Sparkles size={13} /> ANTUNES & MARTINS · ADVOCACIA ESPECIALIZADA
               </p>
               <h2 className="mt-3 max-w-2xl font-serif text-2xl font-bold leading-tight text-white sm:text-4xl">
-                Precisa de segurança jurídica para sua aposentadoria, empresa ou patrimônio imobiliário?
+                Precisa de segurança jurídica para sua causa cível, penal, trabalhista, familiar ou benefício do INSS?
               </h2>
             </div>
             <a
               href={getWhatsAppUrl(
-                "Olá, Dr. Bruno Barroso! Gostaria de conversar sobre uma demanda jurídica com o seu escritório."
+                "Olá! Gostaria de conversar com a equipe Antunes & Martins Advocacia Especializada."
               )}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg bg-gradient-to-r from-[#96681e] via-[#d4a843] to-[#a8782a] px-7 py-4 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#0b0a09] shadow-md transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-gold"
+              className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg bg-gradient-to-r from-[#9e751e] via-[#dfb135] to-[#fad962] px-7 py-4 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#071521] shadow-md transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-gold"
             >
               <WhatsAppIcon size={17} /> Falar no WhatsApp{" "}
               <ArrowUpRight size={15} />
@@ -1419,68 +1441,68 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-[#241e17] bg-[#070605] px-5 py-14 text-[#c7bcb1] sm:px-8 lg:px-12">
+        <footer className="border-t border-[#14324a] bg-[#050f18] px-5 py-14 text-[#c2d3e2] sm:px-8 lg:px-12">
           <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
             <div>
               <a
                 href="#inicio"
-                aria-label="Bruno Barroso Advocacia e Assessoria Jurídica"
+                aria-label="Antunes & Martins Advocacia Especializada"
                 className="inline-flex items-center transition-transform hover:scale-[1.02]"
               >
                 <Image
                   src={LOGO_SRC}
-                  alt="Bruno Barroso Advocacia e Assessoria Jurídica"
+                  alt="Antunes & Martins Advocacia Especializada"
                   width={320}
-                  height={80}
+                  height={100}
                   className="h-12 w-auto object-contain sm:h-14"
                 />
               </a>
-              <p className="mt-4 max-w-xs text-xs leading-6 text-[#c7bcb1]">
-                ⚖️ Advocacia de alto padrão pautada no rigor técnico, acolhimento humano e agilidade. Mais de 14 anos de tradição em Direito Previdenciário (Aposentadorias e Benefícios do INSS), Assessoria Empresarial, Direito Imobiliário e Cível & Sucessões. Nota Máxima 5,0 ★ no Google com 55 avaliações unânimes em Turmalina - MG.
+              <p className="mt-4 max-w-xs text-xs leading-6 text-[#c2d3e2]">
+                ⚖️ Nossa missão é buscar justiça com ética e profissionalismo. Conheça mais sobre nosso trabalho e conte conosco para proteger seus direitos. Atuação especializada em Direito Cível, Criminal, Trabalhista, Família & Sucessões e Previdenciário (INSS). Nota Máxima 5,0 ★ no Google com 39 avaliações em Nanuque - MG.
               </p>
-              <p className="mt-3 text-[11px] font-bold text-[#f5d77f]">
-                Dr. Bruno Barroso · OAB/MG · Turmalina - MG
+              <p className="mt-3 text-[11px] font-bold text-[#fad962]">
+                Antunes & Martins Advocacia Especializada · Nanuque - MG
               </p>
             </div>
 
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f5d77f]">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fad962]">
                 Navegação
               </h3>
-              <div className="mt-4 flex flex-col items-start gap-3 text-xs text-[#c7bcb1]">
-                <a className="footer-link font-medium hover:text-[#f5d77f]" href="#inicio">
+              <div className="mt-4 flex flex-col items-start gap-3 text-xs text-[#c2d3e2]">
+                <a className="footer-link font-medium hover:text-[#fad962]" href="#inicio">
                   Início
                 </a>
-                <a className="footer-link font-medium hover:text-[#f5d77f]" href="#sobre">
+                <a className="footer-link font-medium hover:text-[#fad962]" href="#sobre">
                   O Escritório & Equipe
                 </a>
-                <a className="footer-link font-medium hover:text-[#f5d77f]" href="#atuacao">
+                <a className="footer-link font-medium hover:text-[#fad962]" href="#atuacao">
                   Áreas de Atuação
                 </a>
-                <a className="footer-link font-medium hover:text-[#f5d77f]" href="#diferenciais">
+                <a className="footer-link font-medium hover:text-[#fad962]" href="#diferenciais">
                   Diferenciais
                 </a>
-                <a className="footer-link font-medium hover:text-[#f5d77f]" href="#avaliacoes">
+                <a className="footer-link font-medium hover:text-[#fad962]" href="#avaliacoes">
                   Avaliações no Google (5,0 ★)
                 </a>
-                <a className="footer-link font-medium hover:text-[#f5d77f]" href="#contato">
+                <a className="footer-link font-medium hover:text-[#fad962]" href="#contato">
                   Contato & Sede
                 </a>
               </div>
             </div>
 
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f5d77f]">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fad962]">
                 Contato & Atendimento
               </h3>
-              <div className="mt-4 flex flex-col items-start gap-2.5 text-xs text-[#c7bcb1]">
+              <div className="mt-4 flex flex-col items-start gap-2.5 text-xs text-[#c2d3e2]">
                 <a
                   href={getWhatsAppUrl(
-                    "Olá, Dr. Bruno Barroso! Gostaria de falar com o escritório."
+                    "Olá! Gostaria de falar com o escritório Antunes & Martins Advocacia."
                   )}
                   target="_blank"
                   rel="noreferrer"
-                  className="footer-link inline-flex items-center gap-2 font-bold text-[#f5d77f]"
+                  className="footer-link inline-flex items-center gap-2 font-bold text-[#fad962]"
                 >
                   <WhatsAppIcon size={15} /> WhatsApp: {PHONE_DISPLAY}
                 </a>
@@ -1488,7 +1510,7 @@ export default function Home() {
                   href={`tel:+${WHATSAPP_NUMBER}`}
                   className="footer-link inline-flex items-center gap-2 font-medium"
                 >
-                  <Phone size={15} className="shrink-0 text-[#f5d77f]" /> Telefone: {PHONE_DISPLAY}
+                  <Phone size={15} className="shrink-0 text-[#fad962]" /> Telefone: {PHONE_DISPLAY} / {PHONE_SECONDARY_DISPLAY}
                 </a>
                 <a
                   href={INSTAGRAM_URL}
@@ -1496,28 +1518,28 @@ export default function Home() {
                   rel="noreferrer"
                   className="footer-link inline-flex items-center gap-2 font-medium"
                 >
-                  <InstagramIcon size={15} className="shrink-0 text-[#f5d77f]" /> Instagram: {INSTAGRAM_HANDLE}
+                  <InstagramIcon size={15} className="shrink-0 text-[#fad962]" /> Instagram: {INSTAGRAM_HANDLE}
                 </a>
                 <a
                   href={`mailto:${EMAIL_CONTACT}`}
                   className="footer-link inline-flex items-center gap-2 font-medium"
                 >
-                  <Mail size={15} className="shrink-0 text-[#f5d77f]" /> {EMAIL_CONTACT}
+                  <Mail size={15} className="shrink-0 text-[#fad962]" /> {EMAIL_CONTACT}
                 </a>
                 <div className="footer-link inline-flex items-start gap-2 font-medium">
-                  <MapPin size={15} className="mt-0.5 shrink-0 text-[#f5d77f]" />
+                  <MapPin size={15} className="mt-0.5 shrink-0 text-[#fad962]" />
                   <span>{ADDRESS_TEXT}</span>
                 </div>
-                <p className="inline-flex items-center gap-2 pt-1 text-[11px] font-bold text-[#f5d77f]">
-                  <Clock size={14} className="shrink-0" /> Seg a Sex · Abre às 08:00
+                <p className="inline-flex items-center gap-2 pt-1 text-[11px] font-bold text-[#fad962]">
+                  <Clock size={14} className="shrink-0" /> Seg a Sex · Abertura 08:00
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-[#241e17] pt-6 text-[10px] text-[#786c63] sm:flex-row sm:items-center sm:justify-between">
+          <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-[#14324a] pt-6 text-[10px] text-[#6e8294] sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {new Date().getFullYear()} BRUNO BARROSO — ADVOCACIA E ASSESSORIA JURÍDICA. Todos os direitos reservados.
+              © {new Date().getFullYear()} ANTUNES & MARTINS ADVOCACIA ESPECIALIZADA. Todos os direitos reservados.
             </p>
             <p>
               Conteúdo de caráter exclusivamente informativo, em estrita conformidade com o Código de Ética e Disciplina da OAB.
@@ -1532,16 +1554,16 @@ export default function Home() {
         >
           <a
             href={getWhatsAppUrl(
-              "Olá, Dr. Bruno Barroso! Gostaria de consultar sobre meus direitos com o escritório."
+              "Olá! Gostaria de consultar sobre meus direitos com a Antunes & Martins Advocacia Especializada."
             )}
             target="_blank"
             rel="noreferrer"
-            aria-label="Falar agora pelo WhatsApp com o Dr. Bruno Barroso"
+            aria-label="Falar agora pelo WhatsApp com a Antunes & Martins Advocacia"
             className="group relative flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 cursor-pointer"
           >
             <WhatsAppIcon size={28} />
-            <span className="pointer-events-none absolute right-16 hidden whitespace-nowrap rounded-lg bg-[#14110e] border border-[#d4a843]/40 px-3.5 py-1.5 text-xs font-bold text-white shadow-lg transition-opacity group-hover:block">
-              Falar com o Dr. Bruno Barroso
+            <span className="pointer-events-none absolute right-16 hidden whitespace-nowrap rounded-lg bg-[#0b1e2e] border border-[#dfb135]/40 px-3.5 py-1.5 text-xs font-bold text-white shadow-lg transition-opacity group-hover:block">
+              Falar com Antunes & Martins Advocacia
             </span>
           </a>
         </aside>
@@ -1565,13 +1587,13 @@ export default function Home() {
                 exit={{ opacity: 0, y: 16, scale: 0.99 }}
                 transition={{ duration: 0.24 }}
                 onClick={(event) => event.stopPropagation()}
-                className="relative max-h-[90vh] w-full overflow-y-auto rounded-t-2xl border border-[#d4a843]/40 bg-[#14110e] p-7 text-[#ede5dc] shadow-2xl sm:max-w-xl sm:rounded-2xl sm:p-10"
+                className="relative max-h-[90vh] w-full overflow-y-auto rounded-t-2xl border border-[#dfb135]/40 bg-[#0b1e2e] p-7 text-[#edf2f7] shadow-2xl sm:max-w-xl sm:rounded-2xl sm:p-10"
               >
                 <button
                   type="button"
                   aria-label="Fechar detalhes da especialidade"
                   onClick={() => setActiveArea(null)}
-                  className="absolute right-5 top-5 grid size-10 place-items-center rounded-lg border border-[#d4a843]/30 bg-[#1a1612] text-[#fbeabb] transition-colors hover:border-[#f5d77f] hover:bg-[#d4a843] hover:text-[#0b0a09] cursor-pointer"
+                  className="absolute right-5 top-5 grid size-10 place-items-center rounded-lg border border-[#dfb135]/30 bg-[#14324a] text-[#faecba] transition-colors hover:border-[#fad962] hover:bg-[#dfb135] hover:text-[#071521] cursor-pointer"
                 >
                   <X size={18} />
                 </button>
@@ -1585,21 +1607,21 @@ export default function Home() {
                   {activeArea.title}
                 </h2>
 
-                <p className="mt-5 text-sm leading-7 text-[#c7bcb1]">
+                <p className="mt-5 text-sm leading-7 text-[#c2d3e2]">
                   {activeArea.details}
                 </p>
 
-                <div className="mt-6 border-t border-[#241e17] pt-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#f5d77f]">
+                <div className="mt-6 border-t border-[#14324a] pt-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#fad962]">
                     Principais demandas atendidas pelo escritório:
                   </p>
                   <ul className="mt-4 space-y-3">
                     {activeArea.topics.map((topic) => (
                       <li
                         key={topic}
-                        className="flex items-start gap-3 text-xs leading-5 text-[#ede5dc]"
+                        className="flex items-start gap-3 text-xs leading-5 text-[#edf2f7]"
                       >
-                        <span className="mt-1.5 size-2 shrink-0 rounded-full bg-[#d4a843]" />
+                        <span className="mt-1.5 size-2 shrink-0 rounded-full bg-[#dfb135]" />
                         <span>{topic}</span>
                       </li>
                     ))}
@@ -1619,7 +1641,7 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={() => setActiveArea(null)}
-                    className="px-5 py-3 text-xs font-bold text-[#8f8174] transition-colors hover:text-white cursor-pointer"
+                    className="px-5 py-3 text-xs font-bold text-[#829bb0] transition-colors hover:text-white cursor-pointer"
                   >
                     Fechar
                   </button>

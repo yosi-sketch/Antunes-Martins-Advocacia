@@ -15,7 +15,8 @@ interface GlowingButtonProps {
     | "outline"
     | "emerald"
     | "champagne"
-    | "white";
+    | "white"
+    | "petrol";
 }
 
 export default function GlowingButton({
@@ -33,24 +34,26 @@ export default function GlowingButton({
     lg: "px-7 py-4 text-xs tracking-[0.14em]",
   }[size];
 
-  // Visual identity based on Bruno Barroso — Advocacia e Assessoria Jurídica (Warm Imperial Gold & Rich Obsidian Noir)
+  // Visual identity based on Antunes & Martins Advocacia Especializada (Sovereign Petrol Navy & Sculpted Imperial Gold)
   const variantClasses = {
     gold:
-      "border border-[#f5d77f] bg-gradient-to-r from-[#96681e] via-[#d4a843] to-[#a8782a] text-[#0b0a09] font-black shadow-md shadow-[#d4a843]/30 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-gold",
+      "border border-[#fad962] bg-gradient-to-r from-[#9e751e] via-[#dfb135] to-[#f0c548] text-[#071521] font-black shadow-md shadow-[#dfb135]/25 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-gold",
     dark:
-      "border border-[#d4a843]/40 bg-[#14110e] text-[#fbeabb] font-bold shadow-md hover:-translate-y-0.5 hover:border-[#f5d77f] hover:bg-[#201a14] hover:text-white",
+      "border border-[#dfb135]/40 bg-[#0d2133] text-[#faecba] font-bold shadow-md hover:-translate-y-0.5 hover:border-[#fad962] hover:bg-[#14324a] hover:text-white",
+    petrol:
+      "border border-[#dfb135]/50 bg-[#13476a] text-white font-bold shadow-md hover:-translate-y-0.5 hover:border-[#fad962] hover:bg-[#1b5883]",
     outline:
-      "border border-[#d4a843]/60 bg-transparent text-[#f5d77f] font-bold hover:-translate-y-0.5 hover:border-[#f5d77f] hover:bg-[#d4a843]/10 hover:text-white",
+      "border border-[#dfb135]/60 bg-transparent text-[#fad962] font-bold hover:-translate-y-0.5 hover:border-[#fad962] hover:bg-[#dfb135]/12 hover:text-white",
     emerald:
       "border border-[#25D366] bg-gradient-to-r from-[#1fa851] to-[#25D366] text-white font-bold shadow-md shadow-[#25D366]/25 hover:-translate-y-0.5 hover:brightness-105",
     champagne:
-      "border border-[#d4a843] bg-[#fdf9ee] text-[#96681e] font-bold shadow-xs hover:-translate-y-0.5 hover:bg-[#f6eed9] hover:border-[#96681e]",
+      "border border-[#dfb135] bg-[#fdf8eb] text-[#9e751e] font-bold shadow-xs hover:-translate-y-0.5 hover:bg-[#faecba] hover:border-[#9e751e]",
     white:
-      "border border-[#e8ded3] bg-white text-[#14110e] font-bold shadow-xs hover:-translate-y-0.5 hover:border-[#d4a843] hover:text-[#96681e]",
+      "border border-[#cbd5e1] bg-white text-[#0b1e2e] font-bold shadow-xs hover:-translate-y-0.5 hover:border-[#dfb135] hover:text-[#9e751e]",
   }[variant];
 
   const classes =
-    "inline-flex items-center justify-center gap-2 rounded-lg font-bold uppercase transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#f5d77f] select-none text-center cursor-pointer " +
+    "inline-flex items-center justify-center gap-2 rounded-lg font-bold uppercase transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#fad962] select-none text-center cursor-pointer " +
     sizeClasses +
     " " +
     variantClasses +

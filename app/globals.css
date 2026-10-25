@@ -1,67 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --brand-bg: #faf7f2;
-  --brand-bg-alt: #f4efe6;
-  --brand-surface: #ffffff;
-  --brand-surface-elevated: #ffffff;
-  --brand-surface-card: #ffffff;
-  --brand-gold: #d4a843;
-  --brand-gold-bright: #f5d77f;
-  --brand-gold-light: #fbeabb;
-  --brand-gold-pale: #fdf9ee;
-  --brand-gold-dark: #96681e;
-  --brand-gold-deep: #5e3c09;
-  --brand-noir: #0b0a09;
-  --brand-noir-surface: #14110e;
-  --brand-noir-card: #1a1612;
-  --brand-noir-elevated: #241e17;
-  --brand-ink: #14110e;
-  --brand-ink-headings: #110e0b;
-  --brand-ink-soft: #4d433b;
-  --brand-ink-muted: #786c63;
-  --brand-border: #e8ded3;
-  --brand-border-light: #f2ebe1;
-  --brand-border-gold: rgba(212, 168, 67, 0.35);
-  --brand-border-gold-subtle: rgba(212, 168, 67, 0.18);
+  color-scheme: dark light;
+  
+  /* Brand Sovereign Petrol Navy (Deep Office Wall Atmosphere) */
+  --brand-navy-midnight: #071521;
+  --brand-navy-dark: #0b1e2e;
+  --brand-navy-surface: #0f273b;
+  --brand-navy-card: #14324a;
+  --brand-navy-elevated: #1a3e5c;
+  --brand-navy-petrol: #13476a;
+  --brand-navy-light: #245d86;
+  
+  /* Brand Imperial Gold (Sculpted Metallic Monogram & Sword of Justice) */
+  --brand-gold: #dfb135;
+  --brand-gold-bright: #fad962;
+  --brand-gold-light: #faecba;
+  --brand-gold-pale: #fdf8eb;
+  --brand-gold-dark: #9e751e;
+  --brand-gold-deep: #66490e;
+  
+  /* Light Editorial Cream / Parchment for balanced contrast */
+  --brand-cream-bg: #f9f8f5;
+  --brand-cream-alt: #f2efe8;
+  --brand-cream-surface: #ffffff;
+  --brand-cream-border: #e6dfd3;
+  --brand-cream-ink: #0d1e2c;
+  --brand-cream-muted: #536473;
+  
+  /* Borders & Accents */
+  --brand-border-gold: rgba(223, 177, 53, 0.32);
+  --brand-border-gold-subtle: rgba(223, 177, 53, 0.18);
+  --brand-border-gold-strong: rgba(250, 217, 98, 0.6);
+  --brand-border-navy: rgba(24, 65, 99, 0.45);
 }
 
 @theme inline {
   --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
   --font-cinzel: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
   --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
-  --color-brand-bg: #faf7f2;
-  --color-brand-alt: #f4efe6;
-  --color-brand-surface: #ffffff;
-  --color-brand-gold: #d4a843;
-  --color-brand-gold-bright: #f5d77f;
-  --color-brand-gold-light: #fbeabb;
-  --color-brand-gold-dark: #96681e;
-  --color-brand-noir: #0b0a09;
-  --color-brand-noir-surface: #14110e;
-  --color-brand-noir-card: #1a1612;
-  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
-  --shadow-card-hover: 0 20px 40px -8px rgba(0, 0, 0, 0.12), 0 6px 16px -3px rgba(212, 168, 67, 0.22);
-  --shadow-gold: 0 8px 24px rgba(212, 168, 67, 0.35);
-  --shadow-gold-lg: 0 14px 34px rgba(212, 168, 67, 0.45);
+  
+  --color-brand-midnight: #071521;
+  --color-brand-navy: #0b1e2e;
+  --color-brand-surface: #0f273b;
+  --color-brand-card: #14324a;
+  --color-brand-petrol: #13476a;
+  
+  --color-brand-gold: #dfb135;
+  --color-brand-gold-bright: #fad962;
+  --color-brand-gold-light: #faecba;
+  --color-brand-gold-dark: #9e751e;
+  
+  --color-brand-cream-bg: #f9f8f5;
+  --color-brand-cream-alt: #f2efe8;
+  --color-brand-cream-surface: #ffffff;
+  
+  --shadow-gold: 0 10px 28px -4px rgba(223, 177, 53, 0.32);
+  --shadow-gold-lg: 0 16px 38px -6px rgba(223, 177, 53, 0.45);
+  --shadow-navy-card: 0 20px 45px -10px rgba(5, 14, 23, 0.75);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  background: #0b0a09;
-  color: #ede5dc;
+  background: #071521;
+  color: #edf2f7;
   font-family: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
-  caret-color: #f5d77f;
+  caret-color: #fad962;
 }
 
 ::selection {
-  background: #d4a843;
-  color: #0b0a09;
+  background: #dfb135;
+  color: #071521;
 }
 
 .font-cinzel {
@@ -77,7 +90,7 @@ body {
   line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #96681e;
+  color: #9e751e;
 }
 
 .eyebrow-dark {
@@ -89,7 +102,7 @@ body {
   line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #f5d77f;
+  color: #fad962;
 }
 
 .eyebrow::before,
@@ -97,14 +110,14 @@ body {
   width: 1.75rem;
   height: 2px;
   flex: none;
-  background: #d4a843;
+  background: #dfb135;
   content: "";
 }
 
 .nav-link {
   position: relative;
   padding-block: 0.5rem;
-  color: #4d433b;
+  color: #4a5c6d;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -118,7 +131,7 @@ body {
   bottom: 0;
   left: 0;
   height: 2px;
-  background: #d4a843;
+  background: #dfb135;
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -126,7 +139,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #d4a843;
+  color: #dfb135;
 }
 
 .nav-link:hover::after {
@@ -136,7 +149,7 @@ body {
 .nav-link-dark {
   position: relative;
   padding-block: 0.5rem;
-  color: #d6cbc2;
+  color: #cbd5e1;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -150,7 +163,7 @@ body {
   bottom: 0;
   left: 0;
   height: 2px;
-  background: #f5d77f;
+  background: #fad962;
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -158,7 +171,7 @@ body {
 }
 
 .nav-link-dark:hover {
-  color: #f5d77f;
+  color: #fad962;
 }
 
 .nav-link-dark:hover::after {
@@ -170,7 +183,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #f5d77f;
+  color: #fad962;
 }
 
 ::-webkit-scrollbar {
@@ -178,17 +191,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #14110e;
+  background: #071521;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 2px solid #14110e;
+  border: 2px solid #071521;
   border-radius: 999px;
-  background: #2b231b;
+  background: #14324a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a843;
+  background: #dfb135;
 }
 
 @media (prefers-reduced-motion: reduce) {
